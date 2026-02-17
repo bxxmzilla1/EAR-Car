@@ -613,19 +613,19 @@ const App: React.FC = () => {
         </div>
       )}
 
-      {/* Detail Modal - Styled to match image */}
+      {/* Detail Modal - Fleet Vehicle Preview */}
       {showDetailModal && selectedVehicle && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
           <div className="absolute inset-0 bg-brand-950/80 backdrop-blur-xl" onClick={handleCloseDetails}></div>
-          <div className="bg-[#0A0A0A] border border-white/5 rounded-[2.5rem] shadow-[0_0_100px_rgba(0,0,0,0.5)] relative overflow-hidden w-full max-w-2xl z-10 animate-in zoom-in duration-300">
+          <div className="bg-brand-950 border border-brand-500/20 rounded-[2.5rem] shadow-[0_0_60px_rgba(31,75,87,0.4)] relative overflow-hidden w-full max-w-2xl z-10 animate-in zoom-in duration-300">
             <div className="max-h-[95vh] overflow-y-auto no-scrollbar text-white">
               {/* Image Section */}
               <div className="relative h-64 sm:h-80 overflow-hidden">
                 <img src={selectedVehicle.imageUrl} alt={selectedVehicle.model} className="w-full h-full object-cover opacity-90" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-950 via-transparent to-transparent"></div>
                 <button 
                   onClick={handleCloseDetails} 
-                  className="absolute top-8 right-8 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center transition-all"
+                  className="absolute top-8 right-8 w-12 h-12 rounded-full bg-white/10 hover:bg-brand-500/30 backdrop-blur-md flex items-center justify-center transition-all text-white"
                 >
                   <XCircle className="w-6 h-6" />
                 </button>
@@ -635,8 +635,8 @@ const App: React.FC = () => {
               <div className="px-8 sm:px-12 pb-12 pt-4 space-y-10">
                 {/* Brand & Model Header */}
                 <div className="space-y-1">
-                  <h3 className="text-4xl font-bold tracking-tight">{selectedVehicle.brand} {selectedVehicle.model}</h3>
-                  <p className="text-white/40 text-xs uppercase tracking-[0.3em] font-bold">{selectedVehicle.year} Edition • {selectedVehicle.color}</p>
+                  <h3 className="text-4xl font-bold tracking-tight text-white">{selectedVehicle.brand} {selectedVehicle.model}</h3>
+                  <p className="text-brand-100/80 text-xs uppercase tracking-[0.3em] font-bold">{selectedVehicle.year} Edition • {selectedVehicle.color}</p>
                 </div>
 
                 {/* Overview */}
@@ -645,54 +645,54 @@ const App: React.FC = () => {
                     <Info className="w-5 h-5" />
                     <span className="text-xs font-bold uppercase tracking-widest">Overview</span>
                   </div>
-                  <p className="text-white/60 text-xl leading-relaxed font-light">
+                  <p className="text-white/80 text-xl leading-relaxed font-light">
                     {selectedVehicle.description}
                   </p>
                 </div>
 
                 {/* Specs Grid - 4 Card Style */}
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/[0.03] border border-white/[0.05] p-6 rounded-3xl flex items-center gap-5">
-                    <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-brand-100">
+                  <div className="bg-brand-800/40 border border-brand-500/20 p-6 rounded-3xl flex items-center gap-5">
+                    <div className="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100">
                       <Users className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="text-[10px] uppercase font-bold text-white/30 tracking-widest mb-0.5">Capacity</p>
-                      <p className="text-lg font-bold">{selectedVehicle.seats}</p>
+                      <p className="text-[10px] uppercase font-bold text-brand-100/60 tracking-widest mb-0.5">Capacity</p>
+                      <p className="text-lg font-bold text-white">{selectedVehicle.seats}</p>
                     </div>
                   </div>
-                  <div className="bg-white/[0.03] border border-white/[0.05] p-6 rounded-3xl flex items-center gap-5">
-                    <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-brand-100">
+                  <div className="bg-brand-800/40 border border-brand-500/20 p-6 rounded-3xl flex items-center gap-5">
+                    <div className="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100">
                       <Fuel className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="text-[10px] uppercase font-bold text-white/30 tracking-widest mb-0.5">Fuel Type</p>
-                      <p className="text-lg font-bold">{selectedVehicle.fuelType || 'Gasoline'}</p>
+                      <p className="text-[10px] uppercase font-bold text-brand-100/60 tracking-widest mb-0.5">Fuel Type</p>
+                      <p className="text-lg font-bold text-white">{selectedVehicle.fuelType || 'Gasoline'}</p>
                     </div>
                   </div>
-                  <div className="bg-white/[0.03] border border-white/[0.05] p-6 rounded-3xl flex items-center gap-5">
-                    <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-brand-100">
+                  <div className="bg-brand-800/40 border border-brand-500/20 p-6 rounded-3xl flex items-center gap-5">
+                    <div className="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100">
                       <Settings2 className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="text-[10px] uppercase font-bold text-white/30 tracking-widest mb-0.5">Transmission</p>
-                      <p className="text-lg font-bold">{selectedVehicle.trans === 'AT' ? 'Automatic' : 'Manual'}</p>
+                      <p className="text-[10px] uppercase font-bold text-brand-100/60 tracking-widest mb-0.5">Transmission</p>
+                      <p className="text-lg font-bold text-white">{selectedVehicle.trans === 'AT' ? 'Automatic' : 'Manual'}</p>
                     </div>
                   </div>
-                  <div className="bg-white/[0.03] border border-white/[0.05] p-6 rounded-3xl flex items-center gap-5">
-                    <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-brand-100">
+                  <div className="bg-brand-800/40 border border-brand-500/20 p-6 rounded-3xl flex items-center gap-5">
+                    <div className="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100">
                       <Shield className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="text-[10px] uppercase font-bold text-white/30 tracking-widest mb-0.5">Service</p>
-                      <p className="text-[14px] font-bold leading-tight">{selectedVehicle.serviceType || 'Self-drive or with driver'}</p>
+                      <p className="text-[10px] uppercase font-bold text-brand-100/60 tracking-widest mb-0.5">Service</p>
+                      <p className="text-[14px] font-bold leading-tight text-white">{selectedVehicle.serviceType || 'Self-drive or with driver'}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Rental Features */}
                 <div className="space-y-6">
-                  <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-white/30">Rental Features</h4>
+                  <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-brand-100/70">Rental Features</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
                     {[
                       "Unlimited Mileage",
@@ -702,8 +702,8 @@ const App: React.FC = () => {
                       "Well-maintained Unit",
                       `Carwash Fee: ₱${selectedVehicle.wash}`
                     ].map((feature, i) => (
-                      <div key={i} className="flex items-center gap-3 text-white/80">
-                        <CheckCircle className="w-5 h-5 text-brand-100" />
+                      <div key={i} className="flex items-center gap-3 text-white/90">
+                        <CheckCircle className="w-5 h-5 text-brand-100 shrink-0" />
                         <span className="text-sm font-medium">{feature}</span>
                       </div>
                     ))}
@@ -714,7 +714,7 @@ const App: React.FC = () => {
                 <div className="pt-6">
                   <button 
                     onClick={() => handleStartBooking(selectedVehicle)} 
-                    className="w-full bg-white text-black py-6 rounded-full text-xl font-bold hover:bg-brand-100 transition-all shadow-[0_15px_30px_rgba(255,255,255,0.1)] active:scale-[0.98]"
+                    className="w-full bg-brand-100 text-brand-950 py-6 rounded-full text-xl font-bold hover:bg-white transition-all shadow-[0_15px_30px_-5px_rgba(127,169,175,0.4)] active:scale-[0.98]"
                   >
                     Book for ₱{Number(selectedVehicle.price).toLocaleString()}/Day
                   </button>
