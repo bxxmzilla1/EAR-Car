@@ -261,7 +261,7 @@ const App: React.FC = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-32">
         <div className="absolute inset-0 z-0">
-          <img src="https://raw.githubusercontent.com/bxxmzilla1/earcarrental/main/banner.jpeg" alt="Hero Banner" className="w-full h-full object-cover object-center opacity-40" />
+          <img src="https://raw.githubusercontent.com/bxxmzilla1/earcarrental/main/banner.jpeg" alt="Hero Banner" className="w-full h-full object-cover object-center opacity-60" />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-50 via-brand-50/80 to-transparent"></div>
           <div className="bg-gradient-to-r from-brand-50 via-brand-50/40 to-transparent absolute top-0 right-0 bottom-0 left-0"></div>
         </div>
