@@ -138,7 +138,6 @@ const App: React.FC = () => {
         const serviceName = value.replace('service_', '');
         setUnitOverride(serviceName);
         setSelectedVehicle(null);
-        setBookingForm(prev => ({ ...prev, additionalService: serviceName }));
       } else {
         const unit = FLEET_DATA.find(v => v.id === parseInt(value));
         if (unit) {
@@ -567,33 +566,40 @@ const App: React.FC = () => {
             {!showSummaryStage ? (
               <div className="p-10 md:p-14 space-y-8">
                 <div className="flex justify-between items-start">
-                  <h3 className="text-3xl font-bold text-brand-950 tracking-tight font-serif">Reservation</h3>
+                  <div>
+                    <h3 className="text-3xl font-bold text-brand-950 tracking-tight font-serif">Reservation</h3>
+                    <p className="text-brand-950/60 text-lg mt-2 font-medium">Selected: <span className="text-brand-950 font-bold underline decoration-brand-500/50 underline-offset-8">
+                      {typeof currentUnit === 'string' ? currentUnit : `${currentUnit.brand} ${currentUnit.model}`}
+                    </span></p>
+                  </div>
                   <button onClick={handleCloseBooking} className="text-brand-950/40 hover:text-brand-500 transition-colors btn-neon rounded-full p-2">
                     <XCircle className="w-10 h-10" />
                   </button>
                 </div>
 
-                <div className="space-y-6 text-brand-950">
-                  <div className="space-y-2">
-                    <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Unit or Services</label>
-                    <select 
-                      name="selectedUnitId" 
-                      value={unitOverride ? `service_${unitOverride}` : selectedVehicle?.id} 
-                      onChange={handleInputChange} 
-                      className="w-full bg-white border border-brand-950/10 rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm"
-                    >
-                      <optgroup label="Units">
-                        {FLEET_DATA.map(v => (
-                          <option key={v.id} value={v.id}>{v.year} {v.brand} {v.model} (₱{parsePrice(v.price).toLocaleString()}/day)</option>
-                        ))}
-                      </optgroup>
-                      <optgroup label="Services">
-                        {ADDITIONAL_SERVICES_LIST.map((service, i) => (
-                          <option key={`svc-${i}`} value={`service_${service}`}>{service}</option>
-                        ))}
-                      </optgroup>
-                    </select>
-                  </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-brand-950">
+                  {isGeneralBooking && (
+                    <div className="md:col-span-2 space-y-2">
+                      <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Select Unit or Services</label>
+                      <select 
+                        name="selectedUnitId" 
+                        value={unitOverride ? `service_${unitOverride}` : selectedVehicle?.id} 
+                        onChange={handleInputChange} 
+                        className="w-full bg-white border border-brand-950/10 rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm"
+                      >
+                        <optgroup label="Units">
+                          {FLEET_DATA.map(v => (
+                            <option key={v.id} value={v.id}>{v.year} {v.brand} {v.model} (₱{parsePrice(v.price).toLocaleString()}/day)</option>
+                          ))}
+                        </optgroup>
+                        <optgroup label="Services">
+                          {ADDITIONAL_SERVICES_LIST.map((service, i) => (
+                            <option key={`svc-${i}`} value={`service_${service}`}>{service}</option>
+                          ))}
+                        </optgroup>
+                      </select>
+                    </div>
+                  )}
                   <div className="space-y-2">
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Name</label>
                     <input name="customerName" value={bookingForm.customerName} onChange={handleInputChange} placeholder="Your Full Name" className={`w-full bg-white border ${formErrors.customerName ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm`} />
@@ -601,6 +607,14 @@ const App: React.FC = () => {
                   <div className="space-y-2">
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Contact</label>
                     <input name="contactNumber" value={bookingForm.contactNumber} onChange={handleInputChange} placeholder="Phone Number" className={`w-full bg-white border ${formErrors.contactNumber ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm`} />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Additional Services</label>
+                    <select name="additionalService" value={bookingForm.additionalService} onChange={handleInputChange} className="w-full bg-white border border-brand-950/10 rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm">
+                      {ADDITIONAL_SERVICES_LIST.map((service, i) => (
+                        <option key={i} value={service}>{service}</option>
+                      ))}
+                    </select>
                   </div>
                   <div className="space-y-2">
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Start Date of Rent</label>
@@ -614,39 +628,10 @@ const App: React.FC = () => {
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">End Date of Rent</label>
                     <input name="endDate" type="date" value={bookingForm.endDate} onChange={handleInputChange} className={`w-full bg-white border ${formErrors.endDate ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all text-brand-950 shadow-sm`} />
                   </div>
-                  <div className="space-y-2">
+                  <div className="md:col-span-2 space-y-2">
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Pick-Up Location</label>
                     <input name="pickupLocation" value={bookingForm.pickupLocation} onChange={handleInputChange} placeholder="Return point" className={`w-full bg-white border ${formErrors.pickupLocation ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm`} />
                   </div>
-                  {!unitOverride && (
-                    <div className="space-y-2">
-                      <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Additional Services (Pickup & Drop-off)</label>
-                      <select name="additionalService" value={bookingForm.additionalService} onChange={handleInputChange} className="w-full bg-white border border-brand-950/10 rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm">
-                        {ADDITIONAL_SERVICES_LIST.map((service, i) => (
-                          <option key={i} value={service}>{service}</option>
-                        ))}
-                      </select>
-                    </div>
-                  )}
-                  <div className="border-t border-brand-950/10 pt-6 space-y-3">
-                    <div className="flex justify-between text-base">
-                      <span className="text-brand-950/60">Daily Rate</span>
-                      <span className="font-bold">₱{typeof currentUnit === 'string' ? '0' : parsePrice(currentUnit.price).toLocaleString()} <span className="text-xs font-normal text-brand-950/50">(automatic)</span></span>
-                    </div>
-                    <div className="flex justify-between text-base">
-                      <span className="text-brand-950/60">Delivery & Pick-Up Fee</span>
-                      <span className="font-bold">₱{parsePrice(extractFeeFromService(unitOverride || bookingForm.additionalService)).toLocaleString()} <span className="text-xs font-normal text-brand-950/50">(automatic)</span></span>
-                    </div>
-                    <div className="flex justify-between text-base">
-                      <span className="text-brand-950/60">Car Wash Fee</span>
-                      <span className="font-bold">₱{typeof currentUnit === 'string' ? '0' : parsePrice(currentUnit.wash).toLocaleString()} <span className="text-xs font-normal text-brand-950/50">(automatic)</span></span>
-                    </div>
-                    <div className="flex justify-between text-base pt-2 border-t border-brand-950/5">
-                      <span className="text-brand-950/60">Security Deposit</span>
-                      <span className="font-bold">₱2,000</span>
-                    </div>
-                  </div>
-                  <p className="text-[11px] text-brand-500 italic">Note: Refundable after car return without damage</p>
                 </div>
 
                 <button onClick={handleProceedToSummary} className="w-full bg-brand-950 text-white py-6 rounded-full text-xl font-bold hover:bg-brand-500 transition-all shadow-2xl btn-neon mt-8">
