@@ -23,8 +23,8 @@ export default defineConfig({
         start_url: '/',
         scope: '/',
         icons: [
-          { src: 'https://github.com/bxxmzilla1/earcarrental/blob/main/logo.jpeg?raw=true', sizes: '192x192', type: 'image/jpeg', purpose: 'any maskable' },
-          { src: 'https://github.com/bxxmzilla1/earcarrental/blob/main/logo.jpeg?raw=true', sizes: '512x512', type: 'image/jpeg', purpose: 'any maskable' }
+          { src: 'https://raw.githubusercontent.com/bxxmzilla1/earcarrental/main/logo.png', sizes: '192x192', type: 'image/jpeg', purpose: 'any maskable' },
+          { src: 'https://raw.githubusercontent.com/bxxmzilla1/earcarrental/main/logo.png', sizes: '512x512', type: 'image/jpeg', purpose: 'any maskable' }
         ]
       },
       workbox: {
