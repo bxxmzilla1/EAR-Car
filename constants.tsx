@@ -57,7 +57,7 @@ export const FLEET_DATA: Vehicle[] = [
     fuelType: 'Diesel', serviceType: 'Self-drive or with driver'
   },
   { 
-    id: 10, year: '2024', brand: 'Mitsubishi', model: 'Montero 4x2', trans: 'AT', seats: '7 Seaters', color: 'Black', price: '3,500', wash: '300', 
+    id: 10, year: '2024', brand: 'Mitsubishi', model: 'Montero 4x2', trans: 'AT', seats: '7 Seaters', color: 'Silver', price: '3,500', wash: '300', 
     imageUrl: 'https://github.com/bxxmzilla1/ear_car-rental/blob/main/2024%20Mitsubishi%20Montero%204x2.jpg?raw=true',
     description: 'Elegant and powerful, the Montero Sport offers a premium SUV experience with superior comfort for up to seven passengers.',
     fuelType: 'Diesel', serviceType: 'Self-drive or with driver'
