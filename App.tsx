@@ -18,7 +18,8 @@ import {
   Send,
   Info,
   Fuel,
-  Shield
+  Shield,
+  Truck
 } from 'lucide-react';
 import { FLEET_DATA, CONTACT_INFO } from './constants';
 import { Vehicle, BookingData, ContactPlatform } from './types';
@@ -343,6 +344,149 @@ const App: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Services - Pickup & Drop Off Rates */}
+      <section id="additional-services" className="py-24 bg-brand-50 relative z-10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-16">
+            <h2 className="text-4xl font-medium text-brand-950 tracking-tight font-serif mb-4">Additional Services</h2>
+            <div className="w-24 h-1 bg-brand-500/30 rounded-full"></div>
+            <p className="text-brand-950/60 mt-4 text-lg">Pick-up and drop-off rates across major Palawan destinations.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="glass-card p-8 rounded-[2rem] border-brand-950/5 hover:border-brand-500/30 transition-all duration-300">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-2xl bg-brand-500/10 flex items-center justify-center text-brand-500">
+                  <Truck className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-extrabold uppercase tracking-[0.2em] text-brand-950/40">PICKUP & DROP OFF</h3>
+                  <p className="text-xl font-bold text-brand-950">CITY PROPER</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-brand-950/5 border border-brand-950/5">
+                  <span className="text-sm font-bold text-brand-950/60">5 seater</span>
+                  <span className="text-xl font-extrabold text-brand-500">₱1,000</span>
+                </div>
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-brand-950/5 border border-brand-950/5">
+                  <span className="text-sm font-bold text-brand-950/60">7 seater</span>
+                  <span className="text-xl font-extrabold text-brand-500">₱1,200</span>
+                </div>
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-brand-950/5 border border-brand-950/5">
+                  <span className="text-sm font-bold text-brand-950/60">14 seater</span>
+                  <span className="text-xl font-extrabold text-brand-500">₱1,500</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="glass-card p-8 rounded-[2rem] border-brand-950/5 hover:border-brand-500/30 transition-all duration-300">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-2xl bg-brand-500/10 flex items-center justify-center text-brand-500">
+                  <Truck className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-extrabold uppercase tracking-[0.2em] text-brand-950/40">PICKUP & DROP OFF</h3>
+                  <p className="text-xl font-bold text-brand-950">PORT BARTON PALAWAN</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-brand-950/5 border border-brand-950/5">
+                  <span className="text-sm font-bold text-brand-950/60">5 seater</span>
+                  <span className="text-xl font-extrabold text-brand-500">₱4,500</span>
+                </div>
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-brand-950/5 border border-brand-950/5">
+                  <span className="text-sm font-bold text-brand-950/60">7 seater</span>
+                  <span className="text-xl font-extrabold text-brand-500">₱5,500</span>
+                </div>
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-brand-950/5 border border-brand-950/5">
+                  <span className="text-sm font-bold text-brand-950/60">14 seater</span>
+                  <span className="text-xl font-extrabold text-brand-500">₱6,000</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="glass-card p-8 rounded-[2rem] border-brand-950/5 hover:border-brand-500/30 transition-all duration-300">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-2xl bg-brand-500/10 flex items-center justify-center text-brand-500">
+                  <Truck className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-extrabold uppercase tracking-[0.2em] text-brand-950/40">PICKUP & DROP OFF</h3>
+                  <p className="text-xl font-bold text-brand-950">SAN VICENTE PALAWAN</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-brand-950/5 border border-brand-950/5">
+                  <span className="text-sm font-bold text-brand-950/60">5 seater</span>
+                  <span className="text-xl font-extrabold text-brand-500">₱5,000</span>
+                </div>
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-brand-950/5 border border-brand-950/5">
+                  <span className="text-sm font-bold text-brand-950/60">7 seater</span>
+                  <span className="text-xl font-extrabold text-brand-500">₱6,000</span>
+                </div>
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-brand-950/5 border border-brand-950/5">
+                  <span className="text-sm font-bold text-brand-950/60">14 seater</span>
+                  <span className="text-xl font-extrabold text-brand-500">₱6,500</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="glass-card p-8 rounded-[2rem] border-brand-950/5 hover:border-brand-500/30 transition-all duration-300">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-2xl bg-brand-500/10 flex items-center justify-center text-brand-500">
+                  <Truck className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-extrabold uppercase tracking-[0.2em] text-brand-950/40">PICKUP & DROP OFF</h3>
+                  <p className="text-xl font-bold text-brand-950">EL NIDO PALAWAN</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-brand-950/5 border border-brand-950/5">
+                  <span className="text-sm font-bold text-brand-950/60">5 seater</span>
+                  <span className="text-xl font-extrabold text-brand-500">₱6,000</span>
+                </div>
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-brand-950/5 border border-brand-950/5">
+                  <span className="text-sm font-bold text-brand-950/60">7 seater</span>
+                  <span className="text-xl font-extrabold text-brand-500">₱6,500</span>
+                </div>
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-brand-950/5 border border-brand-950/5">
+                  <span className="text-sm font-bold text-brand-950/60">14 seater</span>
+                  <span className="text-xl font-extrabold text-brand-500">₱8,000</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="glass-card p-8 rounded-[2rem] border-brand-950/5 hover:border-brand-500/30 transition-all duration-300">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-2xl bg-brand-500/10 flex items-center justify-center text-brand-500">
+                  <Truck className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-extrabold uppercase tracking-[0.2em] text-brand-950/40">PICKUP & DROP OFF</h3>
+                  <p className="text-xl font-bold text-brand-950">BULILUYAN PORT</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-brand-950/5 border border-brand-950/5">
+                  <span className="text-sm font-bold text-brand-950/60">5 seater</span>
+                  <span className="text-xl font-extrabold text-brand-500">₱6,000</span>
+                </div>
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-brand-950/5 border border-brand-950/5">
+                  <span className="text-sm font-bold text-brand-950/60">7 seater</span>
+                  <span className="text-xl font-extrabold text-brand-500">₱6,500</span>
+                </div>
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-brand-950/5 border border-brand-950/5">
+                  <span className="text-sm font-bold text-brand-950/60">14 seater</span>
+                  <span className="text-xl font-extrabold text-brand-500">₱8,000</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
