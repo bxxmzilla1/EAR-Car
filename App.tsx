@@ -27,6 +27,11 @@ import { FLEET_DATA, CONTACT_INFO } from './constants';
 import { Vehicle, BookingData, ContactPlatform } from './types';
 import { generateBookingSummary, openPlatformLink, extractFeeFromService } from './services/messageService';
 
+const parsePrice = (value: string | number): number => {
+  if (typeof value === 'number') return value;
+  return Number(String(value || '0').replace(/,/g, '')) || 0;
+};
+
 const ADDITIONAL_SERVICES_LIST = [
   "PICKUP & DROP OFF — CITY PROPER - 5 Seater – 1,000",
   "PICKUP & DROP OFF — CITY PROPER - 7 Seater – 1,200",
@@ -363,7 +368,7 @@ const App: React.FC = () => {
 
                   <div className="flex items-center justify-between">
                     <div className="flex flex-col">
-                      <span className="text-3xl font-bold text-brand-500">₱{Number(car.price).toLocaleString()}</span>
+                      <span className="text-3xl font-bold text-brand-500">₱{parsePrice(car.price).toLocaleString()}</span>
                       <span className="text-[10px] uppercase text-brand-950/40 tracking-[0.2em] mt-1 font-bold">DAILY RATE</span>
                     </div>
                     <button 
@@ -584,7 +589,7 @@ const App: React.FC = () => {
                       >
                         <optgroup label="Units">
                           {FLEET_DATA.map(v => (
-                            <option key={v.id} value={v.id}>{v.year} {v.brand} {v.model} (₱{Number(v.price).toLocaleString()}/day)</option>
+                            <option key={v.id} value={v.id}>{v.year} {v.brand} {v.model} (₱{parsePrice(v.price).toLocaleString()}/day)</option>
                           ))}
                         </optgroup>
                         <optgroup label="Services">
@@ -659,15 +664,15 @@ const App: React.FC = () => {
                   <div className="border-t border-brand-950/10 pt-4 mt-4 space-y-2">
                     <div className="flex justify-between">
                       <span className="text-brand-950/40">Daily Rate</span>
-                      <span className="font-bold">₱{typeof currentUnit === 'string' ? '0' : Number(currentUnit.price).toLocaleString()}</span>
+                      <span className="font-bold">₱{typeof currentUnit === 'string' ? '0' : parsePrice(currentUnit.price).toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-brand-950/40">Delivery & Pick-Up Fee</span>
-                      <span className="font-bold">₱{Number(extractFeeFromService(bookingForm.additionalService)).toLocaleString()}</span>
+                      <span className="font-bold">₱{parsePrice(extractFeeFromService(bookingForm.additionalService)).toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-brand-950/40">Car Wash Fee</span>
-                      <span className="font-bold">₱{typeof currentUnit === 'string' ? '0' : Number(currentUnit.wash).toLocaleString()}</span>
+                      <span className="font-bold">₱{typeof currentUnit === 'string' ? '0' : parsePrice(currentUnit.wash).toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between pt-2 border-t border-brand-950/5">
                       <span className="text-brand-950/40">Security Deposit</span>
@@ -806,7 +811,7 @@ const App: React.FC = () => {
                     onClick={() => handleStartBooking(selectedVehicle)} 
                     className="w-full bg-brand-100 text-brand-950 py-6 rounded-full text-xl font-bold hover:bg-white transition-all shadow-[0_15px_30px_-5px_rgba(127,169,175,0.4)] active:scale-[0.98]"
                   >
-                    Book for ₱{Number(selectedVehicle.price).toLocaleString()}/Day
+                    Book for ₱{parsePrice(selectedVehicle.price).toLocaleString()}/Day
                   </button>
                 </div>
               </div>
