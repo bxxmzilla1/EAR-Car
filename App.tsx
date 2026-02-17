@@ -600,7 +600,7 @@ const App: React.FC = () => {
                       </select>
                     </div>
                   )}
-                  <div className="space-y-2">
+                  <div className="md:col-span-2 space-y-2">
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Name</label>
                     <input name="customerName" value={bookingForm.customerName} onChange={handleInputChange} placeholder="Your Full Name" className={`w-full bg-white border ${formErrors.customerName ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm`} />
                   </div>
@@ -609,12 +609,12 @@ const App: React.FC = () => {
                     <input name="contactNumber" value={bookingForm.contactNumber} onChange={handleInputChange} placeholder="Phone Number" className={`w-full bg-white border ${formErrors.contactNumber ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm`} />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Start Date of Rent</label>
-                    <input name="startDate" type="date" value={bookingForm.startDate} onChange={handleInputChange} className={`w-full bg-white border ${formErrors.startDate ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all text-brand-950 shadow-sm`} />
-                  </div>
-                  <div className="space-y-2">
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Deliver Location</label>
                     <input name="deliveryLocation" value={bookingForm.deliveryLocation} onChange={handleInputChange} placeholder="Pickup point" className={`w-full bg-white border ${formErrors.deliveryLocation ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm`} />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Start Date of Rent</label>
+                    <input name="startDate" type="date" value={bookingForm.startDate} onChange={handleInputChange} className={`w-full bg-white border ${formErrors.startDate ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all text-brand-950 shadow-sm`} />
                   </div>
                   <div className="space-y-2">
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">End Date of Rent</label>
