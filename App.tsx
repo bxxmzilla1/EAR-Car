@@ -248,8 +248,8 @@ const App: React.FC = () => {
           <div className="bg-gradient-to-r from-brand-50 via-brand-50/40 to-transparent absolute top-0 right-0 bottom-0 left-0"></div>
         </div>
         
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 w-full flex flex-col items-center justify-center text-center">
-          <div className="glass-card bg-brand-950/20 p-10 md:p-16 rounded-[3rem] border-brand-950/10 shadow-2xl backdrop-blur-md animate-in fade-in zoom-in duration-700">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 w-full flex flex-col items-center justify-center text-center">
+          <div className="glass-card bg-brand-950/20 w-full aspect-[16/9] min-h-[480px] p-10 md:p-16 rounded-[3rem] border-brand-950/10 shadow-2xl backdrop-blur-md animate-in fade-in zoom-in duration-700 flex flex-col justify-center overflow-auto">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-brand-500/10 border border-brand-500/20">
               <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
               <span className="text-xs font-bold tracking-widest text-brand-950 uppercase">Premium Units Available 2025</span>
