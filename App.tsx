@@ -265,23 +265,23 @@ const App: React.FC = () => {
       </section>
 
       {/* Stats Bar */}
-      <section className="border-y border-brand-950/5 bg-white/30 backdrop-blur-sm relative z-20 py-16 sm:py-24">
+      <section className="border-y border-white/10 bg-brand-950 backdrop-blur-sm relative z-20 py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="space-y-1 text-center md:text-left">
-            <p className="text-3xl font-medium text-brand-950 tracking-tight font-serif">15+</p>
-            <p className="text-xs uppercase tracking-widest text-brand-950/50">Available Rental Vehicles</p>
+            <p className="text-3xl font-medium text-white tracking-tight font-serif">15+</p>
+            <p className="text-xs uppercase tracking-widest text-white/50">Available Rental Vehicles</p>
           </div>
           <div className="space-y-1 text-center md:text-left">
-            <p className="text-3xl font-medium text-brand-950 tracking-tight font-serif">24/7</p>
-            <p className="uppercase text-xs text-brand-950/50 tracking-widest">Customer Support in Palawan</p>
+            <p className="text-3xl font-medium text-white tracking-tight font-serif">24/7</p>
+            <p className="uppercase text-xs text-white/50 tracking-widest">Customer Support in Palawan</p>
           </div>
           <div className="space-y-1 text-center md:text-left">
-            <p className="text-3xl font-medium text-brand-950 tracking-tight font-serif">100%</p>
-            <p className="text-xs uppercase tracking-widest text-brand-950/50">Trusted Car Rental in Puerto Princesa</p>
+            <p className="text-3xl font-medium text-white tracking-tight font-serif">100%</p>
+            <p className="text-xs uppercase tracking-widest text-white/50">Trusted Car Rental in Puerto Princesa</p>
           </div>
           <div className="space-y-1 text-center md:text-left">
-            <p className="text-3xl font-medium text-brand-950 tracking-tight font-serif">0%</p>
-            <p className="text-xs uppercase tracking-widest text-brand-950/50">Transparent Pricing - No Hidden Fees</p>
+            <p className="text-3xl font-medium text-white tracking-tight font-serif">0%</p>
+            <p className="text-xs uppercase tracking-widest text-white/50">Transparent Pricing - No Hidden Fees</p>
           </div>
         </div>
       </section>
