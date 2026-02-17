@@ -702,85 +702,85 @@ const App: React.FC = () => {
 
       {/* Detail Modal - Fleet Vehicle Preview */}
       {showDetailModal && selectedVehicle && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6">
           <div className="absolute inset-0 bg-brand-950/80 backdrop-blur-xl" onClick={handleCloseDetails}></div>
-          <div className="bg-brand-950 border border-brand-500/20 rounded-[2.5rem] shadow-[0_0_60px_rgba(31,75,87,0.4)] relative overflow-hidden w-full max-w-2xl z-10 animate-in zoom-in duration-300">
-            <div className="max-h-[95vh] overflow-y-auto no-scrollbar text-white">
+          <div className="bg-brand-950 border border-brand-500/20 rounded-[2rem] sm:rounded-[2.5rem] shadow-[0_0_60px_rgba(31,75,87,0.4)] relative overflow-hidden w-full max-w-2xl z-10 animate-in zoom-in duration-300 max-h-[95vh] flex flex-col">
+            <div className="overflow-y-auto overscroll-contain text-white flex-1 min-h-0">
               {/* Image Section */}
-              <div className="relative h-64 sm:h-80 overflow-hidden">
+              <div className="relative h-48 sm:h-80 overflow-hidden shrink-0">
                 <img src={selectedVehicle.imageUrl} alt={selectedVehicle.model} className="w-full h-full object-cover opacity-90" />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-950 via-transparent to-transparent"></div>
                 <button 
                   onClick={handleCloseDetails} 
-                  className="absolute top-8 right-8 w-12 h-12 rounded-full bg-white/10 hover:bg-brand-500/30 backdrop-blur-md flex items-center justify-center transition-all text-white"
+                  className="absolute top-4 right-4 sm:top-8 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-brand-500/30 backdrop-blur-md flex items-center justify-center transition-all text-white shrink-0"
                 >
-                  <XCircle className="w-6 h-6" />
+                  <XCircle className="w-5 h-5 sm:w-6 sm:h-6" />
                 </button>
               </div>
 
               {/* Content Section */}
-              <div className="px-8 sm:px-12 pb-12 pt-4 space-y-10">
+              <div className="px-5 sm:px-8 md:px-12 pb-8 sm:pb-12 pt-4 space-y-6 sm:space-y-10">
                 {/* Brand & Model Header */}
                 <div className="space-y-1">
-                  <h3 className="text-4xl font-bold tracking-tight text-white">{selectedVehicle.brand} {selectedVehicle.model}</h3>
-                  <p className="text-brand-100/80 text-xs uppercase tracking-[0.3em] font-bold">{selectedVehicle.year} Edition • {selectedVehicle.color}</p>
+                  <h3 className="text-2xl sm:text-4xl font-bold tracking-tight text-white break-words">{selectedVehicle.brand} {selectedVehicle.model}</h3>
+                  <p className="text-brand-100/80 text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] font-bold break-words">{selectedVehicle.year} Edition • {selectedVehicle.color}</p>
                 </div>
 
                 {/* Overview */}
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-center gap-2.5 text-brand-100">
-                    <Info className="w-5 h-5" />
+                    <Info className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                     <span className="text-xs font-bold uppercase tracking-widest">Overview</span>
                   </div>
-                  <p className="text-white/80 text-xl leading-relaxed font-light">
+                  <p className="text-white/80 text-base sm:text-xl leading-relaxed font-light">
                     {selectedVehicle.description}
                   </p>
                 </div>
 
-                {/* Specs Grid - 4 Card Style */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-brand-800/40 border border-brand-500/20 p-6 rounded-3xl flex items-center gap-5">
-                    <div className="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100">
-                      <Users className="w-6 h-6" />
+                {/* Specs Grid - 4 Card Style - stack on mobile to prevent overlap */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="bg-brand-800/40 border border-brand-500/20 p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-3 sm:gap-5 min-w-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100 shrink-0">
+                      <Users className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="text-[10px] uppercase font-bold text-brand-100/60 tracking-widest mb-0.5">Capacity</p>
-                      <p className="text-lg font-bold text-white">{selectedVehicle.seats}</p>
+                      <p className="text-base sm:text-lg font-bold text-white break-words">{selectedVehicle.seats}</p>
                     </div>
                   </div>
-                  <div className="bg-brand-800/40 border border-brand-500/20 p-6 rounded-3xl flex items-center gap-5">
-                    <div className="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100">
-                      <Fuel className="w-6 h-6" />
+                  <div className="bg-brand-800/40 border border-brand-500/20 p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-3 sm:gap-5 min-w-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100 shrink-0">
+                      <Fuel className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="text-[10px] uppercase font-bold text-brand-100/60 tracking-widest mb-0.5">Fuel Type</p>
-                      <p className="text-lg font-bold text-white">{selectedVehicle.fuelType || 'Gasoline'}</p>
+                      <p className="text-base sm:text-lg font-bold text-white break-words">{selectedVehicle.fuelType || 'Gasoline'}</p>
                     </div>
                   </div>
-                  <div className="bg-brand-800/40 border border-brand-500/20 p-6 rounded-3xl flex items-center gap-5">
-                    <div className="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100">
-                      <Settings2 className="w-6 h-6" />
+                  <div className="bg-brand-800/40 border border-brand-500/20 p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-3 sm:gap-5 min-w-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100 shrink-0">
+                      <Settings2 className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="text-[10px] uppercase font-bold text-brand-100/60 tracking-widest mb-0.5">Transmission</p>
-                      <p className="text-lg font-bold text-white">{selectedVehicle.trans === 'AT' ? 'Automatic' : 'Manual'}</p>
+                      <p className="text-base sm:text-lg font-bold text-white break-words">{selectedVehicle.trans === 'AT' ? 'Automatic' : 'Manual'}</p>
                     </div>
                   </div>
-                  <div className="bg-brand-800/40 border border-brand-500/20 p-6 rounded-3xl flex items-center gap-5">
-                    <div className="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100">
-                      <Shield className="w-6 h-6" />
+                  <div className="bg-brand-800/40 border border-brand-500/20 p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-3 sm:gap-5 min-w-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100 shrink-0">
+                      <Shield className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="text-[10px] uppercase font-bold text-brand-100/60 tracking-widest mb-0.5">Service</p>
-                      <p className="text-[14px] font-bold leading-tight text-white">{selectedVehicle.serviceType || 'Self-drive or with driver'}</p>
+                      <p className="text-sm sm:text-base font-bold leading-tight text-white break-words">{selectedVehicle.serviceType || 'Self-drive or with driver'}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Rental Features */}
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                   <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-brand-100/70">Rental Features</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-y-4 gap-x-4 sm:gap-x-8">
                     {[
                       "Unlimited Mileage",
                       "Clean & Sanitized Interior",
@@ -789,19 +789,19 @@ const App: React.FC = () => {
                       "Well-maintained Unit",
                       `Carwash Fee: ₱${selectedVehicle.wash}`
                     ].map((feature, i) => (
-                      <div key={i} className="flex items-center gap-3 text-white/90">
+                      <div key={i} className="flex items-center gap-3 text-white/90 min-w-0">
                         <CheckCircle className="w-5 h-5 text-brand-100 shrink-0" />
-                        <span className="text-sm font-medium">{feature}</span>
+                        <span className="text-sm font-medium break-words">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Main Action Button */}
-                <div className="pt-6">
+                <div className="pt-4 sm:pt-6">
                   <button 
                     onClick={() => handleStartBooking(selectedVehicle)} 
-                    className="w-full bg-brand-100 text-brand-950 py-6 rounded-full text-xl font-bold hover:bg-white transition-all shadow-[0_15px_30px_-5px_rgba(127,169,175,0.4)] active:scale-[0.98]"
+                    className="w-full bg-brand-100 text-brand-950 py-5 sm:py-6 rounded-full text-lg sm:text-xl font-bold hover:bg-white transition-all shadow-[0_15px_30px_-5px_rgba(127,169,175,0.4)] active:scale-[0.98]"
                   >
                     Book for ₱{parsePrice(selectedVehicle.price).toLocaleString()}/Day
                   </button>
