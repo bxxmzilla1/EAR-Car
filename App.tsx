@@ -611,6 +611,7 @@ const App: React.FC = () => {
                   <div className="space-y-2">
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Additional Services</label>
                     <select name="additionalService" value={bookingForm.additionalService} onChange={handleInputChange} className="w-full bg-white border border-brand-950/10 rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm">
+                      <option value="N/A">N/A — No pickup/drop-off</option>
                       {ADDITIONAL_SERVICES_LIST.map((service, i) => (
                         <option key={i} value={service}>{service}</option>
                       ))}
