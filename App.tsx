@@ -396,46 +396,46 @@ const App: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
             <button onClick={() => openPlatformLink(ContactPlatform.WHATSAPP, 'Hi! I\'d like to inquire about car rental.')} className="glass-card group p-8 rounded-[2rem] hover:border-brand-400/50 transition-all duration-500 hover:shadow-[0_0_40px_-10px_rgba(127,169,175,0.2)] flex flex-col items-center text-center btn-neon border border-white/5">
-              <div className="w-16 h-16 rounded-3xl bg-white/5 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform group-hover:text-brand-100">
+              <div className="w-16 h-16 rounded-3xl bg-white/5 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform group-hover:text-brand-950">
                 <MessageCircle className="w-8 h-8" />
               </div>
-              <h4 className="text-sm font-bold uppercase tracking-widest text-white/50 mb-2">WhatsApp</h4>
-              <p className="text-xl font-medium text-white group-hover:text-brand-100 transition-colors">+63 946 349 3363</p>
+              <h4 className="text-sm font-bold uppercase tracking-widest text-white/50 mb-2 group-hover:text-brand-950 transition-colors">WhatsApp</h4>
+              <p className="text-xl font-medium text-white group-hover:text-brand-950 transition-colors">+63 946 349 3363</p>
             </button>
             <button onClick={() => openPlatformLink(ContactPlatform.VIBER, 'Hi! I\'d like to inquire about car rental.')} className="glass-card group p-8 rounded-[2rem] hover:border-brand-400/50 transition-all duration-500 hover:shadow-[0_0_40px_-10px_rgba(127,169,175,0.2)] flex flex-col items-center text-center btn-neon border border-white/5">
-              <div className="w-16 h-16 rounded-3xl bg-white/5 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform group-hover:text-brand-100">
+              <div className="w-16 h-16 rounded-3xl bg-white/5 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform group-hover:text-brand-950">
                 <Send className="w-8 h-8" />
               </div>
-              <h4 className="text-sm font-bold uppercase tracking-widest text-white/50 mb-2">Viber</h4>
-              <p className="text-xl font-medium text-white group-hover:text-brand-100 transition-colors">+63 946 349 3363</p>
+              <h4 className="text-sm font-bold uppercase tracking-widest text-white/50 mb-2 group-hover:text-brand-950 transition-colors">Viber</h4>
+              <p className="text-xl font-medium text-white group-hover:text-brand-950 transition-colors">+63 946 349 3363</p>
             </button>
             <button onClick={() => openPlatformLink(ContactPlatform.MESSENGER, '')} className="glass-card group p-8 rounded-[2rem] hover:border-brand-400/50 transition-all duration-500 hover:shadow-[0_0_40px_-10px_rgba(127,169,175,0.2)] flex flex-col items-center text-center btn-neon border border-white/5">
-              <div className="w-16 h-16 rounded-3xl bg-white/5 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform group-hover:text-brand-100">
+              <div className="w-16 h-16 rounded-3xl bg-white/5 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform group-hover:text-brand-950">
                 <Facebook className="w-8 h-8" />
               </div>
-              <h4 className="text-sm font-bold uppercase tracking-widest text-white/50 mb-2">Facebook</h4>
-              <p className="text-xl font-medium text-white group-hover:text-brand-100 transition-colors">E.A.R. Car Rental</p>
+              <h4 className="text-sm font-bold uppercase tracking-widest text-white/50 mb-2 group-hover:text-brand-950 transition-colors">Facebook</h4>
+              <p className="text-xl font-medium text-white group-hover:text-brand-950 transition-colors">E.A.R. Car Rental</p>
             </button>
           </div>
           <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div className="glass-card p-10 rounded-[2.5rem] border-white/5">
+            <div className="glass-card group p-10 rounded-[2.5rem] border-white/5 hover:border-brand-500/30 transition-colors">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-brand-100">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-brand-100 group-hover:text-brand-950 transition-colors">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <h4 className="text-sm font-bold uppercase tracking-widest text-white/50">Location</h4>
+                <h4 className="text-sm font-bold uppercase tracking-widest text-white/50 group-hover:text-brand-950 transition-colors">Location</h4>
               </div>
-              <p className="text-white/80 text-lg font-light leading-relaxed">{CONTACT_INFO.address}</p>
+              <p className="text-white/80 text-lg font-light leading-relaxed group-hover:text-brand-950 transition-colors">{CONTACT_INFO.address}</p>
             </div>
-            <div className="glass-card p-10 rounded-[2.5rem] border-white/5">
+            <div className="glass-card group p-10 rounded-[2.5rem] border-white/5 hover:border-brand-500/30 transition-colors">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-brand-100">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-brand-100 group-hover:text-brand-950 transition-colors">
                   <Smartphone className="w-4 h-4" />
                 </div>
-                <h4 className="text-sm font-bold uppercase tracking-widest text-white/50">Phone</h4>
+                <h4 className="text-sm font-bold uppercase tracking-widest text-white/50 group-hover:text-brand-950 transition-colors">Phone</h4>
               </div>
-              <a href={`tel:${CONTACT_INFO.phone}`} className="text-white/80 text-lg font-light hover:text-brand-100 transition-colors">{CONTACT_INFO.phone}</a>
-              <p className="text-white/60 text-base mt-4 font-light">{CONTACT_INFO.email}</p>
+              <a href={`tel:${CONTACT_INFO.phone}`} className="text-white/80 text-lg font-light hover:text-brand-950 transition-colors block">{CONTACT_INFO.phone}</a>
+              <p className="text-white/60 text-base mt-4 font-light group-hover:text-brand-950 transition-colors">{CONTACT_INFO.email}</p>
             </div>
           </div>
         </div>
