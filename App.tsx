@@ -218,7 +218,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-brand-50" id="top">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isNavScrolled ? 'glass-nav h-16' : 'glass-nav h-20'}`}>
+      <nav className={`relative w-full z-50 transition-all duration-300 ${isNavScrolled ? 'glass-nav h-16' : 'glass-nav h-20'}`}>
         <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
           <a href="#top" onClick={(e) => scrollToSection(e, 'top')} className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-full overflow-hidden border border-white/20 shadow-lg group-hover:scale-105 transition-transform duration-300 shrink-0">
@@ -259,7 +259,7 @@ const App: React.FC = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-32">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-32">
         <div className="absolute inset-0 z-0">
           <img src="https://raw.githubusercontent.com/bxxmzilla1/earcarrental/main/banner.jpeg" alt="Hero Banner" className="w-full h-full object-cover object-center opacity-60" />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-50 via-brand-50/80 to-transparent"></div>
