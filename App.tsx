@@ -25,7 +25,7 @@ import {
 } from 'lucide-react';
 import { FLEET_DATA, CONTACT_INFO } from './constants';
 import { Vehicle, BookingData, ContactPlatform } from './types';
-import { generateBookingSummary, openPlatformLink, extractFeeFromService } from './services/messageService';
+import { generateBookingSummary, openPlatformLink } from './services/messageService';
 
 const parsePrice = (value: string | number): number => {
   if (typeof value === 'number') return value;
@@ -68,7 +68,7 @@ const App: React.FC = () => {
     deliveryLocation: '',
     pickupLocation: '',
     locationArea: 'City Proper',
-    additionalService: ADDITIONAL_SERVICES_LIST[0],
+    additionalService: 'N/A',
     notes: ''
   });
 
@@ -609,15 +609,6 @@ const App: React.FC = () => {
                     <input name="contactNumber" value={bookingForm.contactNumber} onChange={handleInputChange} placeholder="Phone Number" className={`w-full bg-white border ${formErrors.contactNumber ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm`} />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Additional Services</label>
-                    <select name="additionalService" value={bookingForm.additionalService} onChange={handleInputChange} className="w-full bg-white border border-brand-950/10 rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm">
-                      <option value="N/A">N/A — No pickup/drop-off</option>
-                      {ADDITIONAL_SERVICES_LIST.map((service, i) => (
-                        <option key={i} value={service}>{service}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="space-y-2">
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Start Date of Rent</label>
                     <input name="startDate" type="date" value={bookingForm.startDate} onChange={handleInputChange} className={`w-full bg-white border ${formErrors.startDate ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all text-brand-950 shadow-sm`} />
                   </div>
@@ -669,7 +660,7 @@ const App: React.FC = () => {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-brand-950/40">Delivery & Pick-Up Fee</span>
-                      <span className="font-bold">₱{parsePrice(extractFeeFromService(bookingForm.additionalService)).toLocaleString()}</span>
+                      <span className="font-bold">₱300</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-brand-950/40">Car Wash Fee</span>

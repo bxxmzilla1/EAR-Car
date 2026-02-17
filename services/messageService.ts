@@ -2,18 +2,6 @@
 import { Vehicle, BookingData, ContactPlatform } from '../types';
 import { CONTACT_INFO } from '../constants';
 
-/**
- * Extracts the numerical fee from a service string like "PICKUP & DROP OFF — CITY PROPER - 5 Seater – 1,000"
- */
-export const extractFeeFromService = (service: string): string => {
-  // Split using the en-dash '–' as defined in ADDITIONAL_SERVICES_LIST
-  const parts = service.split('–');
-  if (parts.length > 1) {
-    return parts[parts.length - 1].trim().replace(/,/g, '');
-  }
-  return '0';
-};
-
 const getLocationFee = (seats: string, area: string): string => {
   const is14 = seats.includes('14') || seats.includes('15') || seats.includes('12');
   const is7 = seats.includes('7');
@@ -37,9 +25,8 @@ const getLocationFee = (seats: string, area: string): string => {
  * Now supports both Vehicle objects and direct service strings for flexible inquiries.
  */
 export const generateBookingSummary = (vehicle: Vehicle | string, booking: BookingData): string => {
-  // Use the specific additional service string selected in the form to determine the fee
-  const feeNum = extractFeeFromService(booking.additionalService);
-  const deliveryFee = Number(feeNum).toLocaleString();
+  // Delivery & Pick-Up Fee is fixed at ₱300
+  const deliveryFee = '300';
   const isUnitString = typeof vehicle === 'string';
   
   const unitInfo = isUnitString 
