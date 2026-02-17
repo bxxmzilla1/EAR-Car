@@ -383,28 +383,13 @@ const App: React.FC = () => {
       {/* Additional Services - Pickup & Drop Off Rates Carousel */}
       <section id="additional-services" className="py-24 bg-brand-50 relative z-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-            <div>
-              <h2 className="text-4xl font-medium text-brand-950 tracking-tight font-serif mb-4">Additional Services</h2>
-              <div className="w-24 h-1 bg-brand-500/30 rounded-full"></div>
-              <p className="text-brand-950/60 mt-4 text-lg">Pick-up and drop-off rates across major Palawan destinations.</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <button onClick={() => scrollAdditionalServices('prev')} aria-label="Previous" className="w-12 h-12 rounded-full bg-brand-950/10 hover:bg-brand-500 text-brand-950 hover:text-white transition-all flex items-center justify-center border border-brand-950/10">
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <div className="flex gap-2">
-                {ADDITIONAL_SERVICES_RATES.map((_, i) => (
-                  <button key={i} onClick={() => { const c = additionalServicesRef.current; if (c) { const itemWidth = c.scrollWidth / ADDITIONAL_SERVICES_RATES.length; c.scrollTo({ left: i * itemWidth, behavior: 'smooth' }); setAdditionalServicesIndex(i); } }} className={`w-2.5 h-2.5 rounded-full transition-colors ${i === additionalServicesIndex ? 'bg-brand-500 scale-125' : 'bg-brand-950/30 hover:bg-brand-950/50'}`} aria-label={`Go to slide ${i + 1}`} />
-                ))}
-              </div>
-              <button onClick={() => scrollAdditionalServices('next')} aria-label="Next" className="w-12 h-12 rounded-full bg-brand-950/10 hover:bg-brand-500 text-brand-950 hover:text-white transition-all flex items-center justify-center border border-brand-950/10">
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
+          <div className="mb-16">
+            <h2 className="text-4xl font-medium text-brand-950 tracking-tight font-serif mb-4">Additional Services</h2>
+            <div className="w-24 h-1 bg-brand-500/30 rounded-full"></div>
+            <p className="text-brand-950/60 mt-4 text-lg">Pick-up and drop-off rates across major Palawan destinations.</p>
           </div>
 
-          <div ref={additionalServicesRef} className="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar pb-4 -mx-6 px-6" style={{ scrollSnapType: 'x mandatory' }}>
+          <div ref={additionalServicesRef} className="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar -mx-6 px-6" style={{ scrollSnapType: 'x mandatory' }}>
             {ADDITIONAL_SERVICES_RATES.map((service) => (
               <div key={service.title} className="flex-shrink-0 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] snap-center">
                 <div className="glass-card p-8 rounded-[2rem] border-brand-950/5 hover:border-brand-500/30 transition-all duration-300 h-full">
@@ -434,6 +419,20 @@ const App: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="flex items-center justify-center gap-4 mt-12">
+            <button onClick={() => scrollAdditionalServices('prev')} aria-label="Previous" className="w-12 h-12 rounded-full bg-brand-950/10 hover:bg-brand-500 text-brand-950 hover:text-white transition-all flex items-center justify-center border border-brand-950/10">
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <div className="flex gap-2">
+              {ADDITIONAL_SERVICES_RATES.map((_, i) => (
+                <button key={i} onClick={() => { const c = additionalServicesRef.current; if (c) { const itemWidth = c.scrollWidth / ADDITIONAL_SERVICES_RATES.length; c.scrollTo({ left: i * itemWidth, behavior: 'smooth' }); setAdditionalServicesIndex(i); } }} className={`w-2.5 h-2.5 rounded-full transition-colors ${i === additionalServicesIndex ? 'bg-brand-500 scale-125' : 'bg-brand-950/30 hover:bg-brand-950/50'}`} aria-label={`Go to slide ${i + 1}`} />
+              ))}
+            </div>
+            <button onClick={() => scrollAdditionalServices('next')} aria-label="Next" className="w-12 h-12 rounded-full bg-brand-950/10 hover:bg-brand-500 text-brand-950 hover:text-white transition-all flex items-center justify-center border border-brand-950/10">
+              <ChevronRight className="w-6 h-6" />
+            </button>
           </div>
         </div>
       </section>
