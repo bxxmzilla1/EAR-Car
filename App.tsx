@@ -100,6 +100,20 @@ const App: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (showBookingModal) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
+  }, [showBookingModal]);
+
   const handleOpenDetails = (vehicle: Vehicle) => {
     setSelectedVehicle(vehicle);
     setUnitOverride(null);
@@ -558,26 +572,27 @@ const App: React.FC = () => {
 
       {/* Booking Modal */}
       {showBookingModal && currentUnit && (
-        <div className="fixed inset-0 z-[110] flex items-center justify-center p-6 overflow-y-auto">
+        <div className="fixed inset-0 z-[110] flex items-end sm:items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-brand-950/75 backdrop-blur-2xl" onClick={handleCloseBooking}></div>
-          <div className="bg-brand-50 border border-brand-950/10 rounded-[3rem] shadow-2xl relative overflow-hidden w-full max-w-xl z-20 animate-in slide-in-from-bottom duration-500">
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-100 via-brand-950 to-brand-100"></div>
+          <div className="bg-brand-50 border border-brand-950/10 rounded-t-[2rem] sm:rounded-[3rem] shadow-2xl relative overflow-hidden w-full max-w-xl z-20 animate-in slide-in-from-bottom duration-500 flex flex-col h-[100dvh] sm:h-auto sm:max-h-[90vh] sm:my-6">
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-100 via-brand-950 to-brand-100 shrink-0"></div>
             
+            <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain">
             {!showSummaryStage ? (
-              <div className="p-10 md:p-14 space-y-8">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="text-3xl font-bold text-brand-950 tracking-tight font-serif">Reservation</h3>
-                    <p className="text-brand-950/60 text-lg mt-2 font-medium">Selected: <span className="text-brand-950 font-bold underline decoration-brand-500/50 underline-offset-8">
+              <div className="p-5 sm:p-10 md:p-14 space-y-6 sm:space-y-8">
+                <div className="flex justify-between items-start gap-4">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-brand-950 tracking-tight font-serif">Reservation</h3>
+                    <p className="text-brand-950/60 text-sm sm:text-lg mt-1 sm:mt-2 font-medium break-words">Selected: <span className="text-brand-950 font-bold underline decoration-brand-500/50 underline-offset-8">
                       {typeof currentUnit === 'string' ? currentUnit : `${currentUnit.brand} ${currentUnit.model}`}
                     </span></p>
                   </div>
-                  <button onClick={handleCloseBooking} className="text-brand-950/40 hover:text-brand-500 transition-colors btn-neon rounded-full p-2">
-                    <XCircle className="w-10 h-10" />
+                  <button onClick={handleCloseBooking} className="text-brand-950/40 hover:text-brand-500 transition-colors btn-neon rounded-full p-2 shrink-0">
+                    <XCircle className="w-8 h-8 sm:w-10 sm:h-10" />
                   </button>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-brand-950">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 text-brand-950">
                   {isGeneralBooking && (
                     <div className="md:col-span-2 space-y-2">
                       <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Select Unit or Services</label>
@@ -626,18 +641,18 @@ const App: React.FC = () => {
                   </div>
                 </div>
 
-                <button onClick={handleProceedToSummary} className="w-full bg-brand-950 text-white py-6 rounded-full text-xl font-bold hover:bg-brand-500 transition-all shadow-2xl btn-neon mt-8">
+                <button onClick={handleProceedToSummary} className="w-full bg-brand-950 text-white py-5 sm:py-6 rounded-full text-lg sm:text-xl font-bold hover:bg-brand-500 transition-all shadow-2xl btn-neon mt-4 sm:mt-8">
                   Review Booking Summary
                 </button>
               </div>
             ) : (
-              <div className="p-10 md:p-14 space-y-8 animate-in slide-in-from-right duration-300">
-                <div className="flex justify-between items-start">
-                  <h3 className="text-3xl font-bold text-brand-950 tracking-tight font-serif">Booking Confirmation</h3>
-                  <button onClick={() => setShowSummaryStage(false)} className="text-brand-950/40 hover:text-brand-500 transition-colors text-sm font-bold underline">Go Back</button>
+              <div className="p-5 sm:p-10 md:p-14 space-y-6 sm:space-y-8 animate-in slide-in-from-right duration-300">
+                <div className="flex justify-between items-start gap-3">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-brand-950 tracking-tight font-serif">Booking Confirmation</h3>
+                  <button onClick={() => setShowSummaryStage(false)} className="text-brand-950/40 hover:text-brand-500 transition-colors text-sm font-bold underline shrink-0">Go Back</button>
                 </div>
 
-                <div className="glass-card bg-brand-950/5 border-brand-950/10 p-8 rounded-3xl space-y-3 text-sm text-brand-950 font-medium">
+                <div className="glass-card bg-brand-950/5 border-brand-950/10 p-5 sm:p-8 rounded-2xl sm:rounded-3xl space-y-3 text-sm text-brand-950 font-medium">
                   <p>
                     <span className="text-brand-950/40 uppercase tracking-widest text-[10px] block mb-1">Unit</span> 
                     {typeof currentUnit === 'string' ? currentUnit : `${currentUnit.year} ${currentUnit.brand} ${currentUnit.model} (${currentUnit.color})`}
@@ -677,9 +692,9 @@ const App: React.FC = () => {
                   <p className="text-[11px] text-brand-500 italic pt-4">Note: Refundable after car return without damage</p>
                 </div>
 
-                <div className="space-y-6">
-                  <p className="text-center text-[12px] uppercase text-brand-950/40 tracking-[0.4em] font-extrabold">Confirm & Send Inquiry Via</p>
-                  <div className="grid grid-cols-3 gap-6">
+                <div className="space-y-4 sm:space-y-6">
+                  <p className="text-center text-[11px] sm:text-[12px] uppercase text-brand-950/40 tracking-[0.3em] sm:tracking-[0.4em] font-extrabold">Confirm & Send Inquiry Via</p>
+                  <div className="grid grid-cols-3 gap-3 sm:gap-6">
                     <button onClick={() => handleSubmitBooking(ContactPlatform.WHATSAPP)} className="flex flex-col items-center gap-3 p-5 bg-white border border-brand-950/10 rounded-3xl transition-all text-brand-500 btn-neon shadow-sm">
                       <MessageCircle className="w-8 h-8" />
                       <span className="text-[10px] font-extrabold uppercase tracking-widest">WhatsApp</span>
@@ -696,6 +711,7 @@ const App: React.FC = () => {
                 </div>
               </div>
             )}
+            </div>
           </div>
         </div>
       )}
