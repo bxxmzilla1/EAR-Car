@@ -222,7 +222,7 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
           <a href="#top" onClick={(e) => scrollToSection(e, 'top')} className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-full overflow-hidden border border-white/20 shadow-lg group-hover:scale-105 transition-transform duration-300 shrink-0">
-              <img src="https://github.com/bxxmzilla1/ear_car-rental/blob/main/logo.jpeg?raw=true" alt="EAR Logo" className="w-full h-full object-cover" />
+              <img src="https://github.com/bxxmzilla1/earcarrental/blob/main/logo.jpeg?raw=true" alt="EAR Logo" className="w-full h-full object-cover" />
             </div>
             <span className="text-lg font-medium tracking-tight text-white group-hover:text-brand-100 transition-colors flex items-center gap-2">
               <span className="font-bold">E.A.R.</span>
@@ -261,7 +261,7 @@ const App: React.FC = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-32">
         <div className="absolute inset-0 z-0">
-          <img src="https://github.com/bxxmzilla1/ear_car-rental/blob/main/banner.jpg?raw=true" alt="Hero Banner" className="w-full h-full object-cover object-center opacity-40" />
+          <img src="https://github.com/bxxmzilla1/earcarrental/blob/main/banner.jpg?raw=true" alt="Hero Banner" className="w-full h-full object-cover object-center opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-50 via-brand-50/80 to-transparent"></div>
           <div className="bg-gradient-to-r from-brand-50 via-brand-50/40 to-transparent absolute top-0 right-0 bottom-0 left-0"></div>
         </div>
@@ -541,7 +541,7 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 rounded-full overflow-hidden border border-white/20">
-              <img src="https://github.com/bxxmzilla1/ear_car-rental/blob/main/logo.jpeg?raw=true" alt="EAR Logo" className="w-full h-full object-cover" />
+              <img src="https://github.com/bxxmzilla1/earcarrental/blob/main/logo.jpeg?raw=true" alt="EAR Logo" className="w-full h-full object-cover" />
             </div>
             <div>
               <span className="text-lg font-bold tracking-tight">E.A.R. Car Rental</span>
