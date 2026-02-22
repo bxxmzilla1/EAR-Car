@@ -236,9 +236,9 @@ const App: React.FC = () => {
       {/* Navigation */}
       <nav className={`relative w-full z-50 transition-all duration-300 ${isNavScrolled ? 'glass-nav h-16' : 'glass-nav h-20'}`}>
         <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
-          <a href="#top" onClick={(e) => scrollToSection(e, 'top')} className="flex items-center gap-3 group">
+          <a href="#top" onClick={(e) => scrollToSection(e, 'top')} className="flex items-center gap-3 group" title="E.A.R. Car Rental Puerto Princesa - Palawan Car Rental Home">
             <div className="w-10 h-10 rounded-full overflow-hidden border border-white/20 shadow-lg group-hover:scale-105 transition-transform duration-300 shrink-0">
-              <img src="https://raw.githubusercontent.com/bxxmzilla1/earcarrental/main/logo.png" alt="EAR Logo" className="w-full h-full object-cover" />
+              <img src="https://raw.githubusercontent.com/bxxmzilla1/earcarrental/main/logo.png" alt="E.A.R. Car Rental - Puerto Princesa Palawan Car Rental" className="w-full h-full object-cover" />
             </div>
             <span className="text-lg font-medium tracking-tight text-white group-hover:text-brand-100 transition-colors flex items-center gap-2">
               <span className="font-bold">E.A.R.</span>
@@ -248,9 +248,9 @@ const App: React.FC = () => {
           
           <div className="flex items-center gap-8 ml-auto">
             <div className="hidden md:flex items-center gap-8 mr-4">
-              <a href="#fleet" onClick={(e) => scrollToSection(e, 'fleet')} className="text-xs font-bold uppercase tracking-widest text-white/70 hover:text-white transition-colors">Our Collection</a>
-              <a href="#services" onClick={(e) => scrollToSection(e, 'services')} className="text-xs font-bold uppercase tracking-widest text-white/70 hover:text-white transition-colors">Services</a>
-              <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="text-xs font-bold uppercase tracking-widest text-white/70 hover:text-white transition-colors">Contact</a>
+              <a href="#fleet" onClick={(e) => scrollToSection(e, 'fleet')} title="View car rental fleet in Puerto Princesa Palawan" className="text-xs font-bold uppercase tracking-widest text-white/70 hover:text-white transition-colors">Our Collection</a>
+              <a href="#services" onClick={(e) => scrollToSection(e, 'services')} title="Car rental services - El Nido, Port Barton, San Vicente" className="text-xs font-bold uppercase tracking-widest text-white/70 hover:text-white transition-colors">Services</a>
+              <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} title="Contact E.A.R. Car Rental Puerto Princesa" className="text-xs font-bold uppercase tracking-widest text-white/70 hover:text-white transition-colors">Contact</a>
             </div>
 
             <button className="text-white hover:text-brand-100 transition-colors btn-neon rounded-full p-1" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -261,9 +261,9 @@ const App: React.FC = () => {
 
         {mobileMenuOpen && (
           <div className="absolute top-full left-0 w-full glass-nav border-b border-white/10 p-8 flex flex-col items-center gap-8 animate-in slide-in-from-top duration-300 shadow-2xl">
-            <a href="#fleet" onClick={(e) => scrollToSection(e, 'fleet')} className="text-2xl font-serif font-light text-white hover:text-brand-100 transition-colors">Our Collection</a>
-            <a href="#services" onClick={(e) => scrollToSection(e, 'services')} className="text-2xl font-serif font-light text-white hover:text-brand-100 transition-colors">Services</a>
-            <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="text-2xl font-serif font-light text-white hover:text-brand-100 transition-colors">Contact</a>
+            <a href="#fleet" onClick={(e) => scrollToSection(e, 'fleet')} title="View car rental fleet in Puerto Princesa Palawan" className="text-2xl font-serif font-light text-white hover:text-brand-100 transition-colors">Our Collection</a>
+            <a href="#services" onClick={(e) => scrollToSection(e, 'services')} title="Car rental services - El Nido, Port Barton, San Vicente" className="text-2xl font-serif font-light text-white hover:text-brand-100 transition-colors">Services</a>
+            <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} title="Contact E.A.R. Car Rental Puerto Princesa" className="text-2xl font-serif font-light text-white hover:text-brand-100 transition-colors">Contact</a>
             <button 
               onClick={(e) => { handleStartBooking(); setMobileMenuOpen(false); }}
               className="bg-white text-brand-950 px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs btn-neon border border-transparent shadow-lg"
@@ -304,7 +304,7 @@ const App: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
-            <a href="#fleet" onClick={(e) => scrollToSection(e, 'fleet')} className="flex items-center justify-center gap-3 bg-brand-800 text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide btn-neon border border-transparent shadow-[0_0_25px_-5px_rgba(36,92,133,0.5)]">
+            <a href="#fleet" onClick={(e) => scrollToSection(e, 'fleet')} title="Browse car rental fleet - Puerto Princesa Palawan" className="flex items-center justify-center gap-3 bg-brand-800 text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide btn-neon border border-transparent shadow-[0_0_25px_-5px_rgba(36,92,133,0.5)]">
               Explore Fleet
               <ArrowDown className="w-4 h-4" />
             </a>
@@ -536,7 +536,7 @@ const App: React.FC = () => {
                 </div>
                 <h4 className="text-sm font-bold uppercase tracking-widest text-white/50 group-hover:text-brand-950 transition-colors">Location</h4>
               </div>
-              <p className="text-white/80 text-lg font-light leading-relaxed group-hover:text-brand-950 transition-colors">{CONTACT_INFO.address}</p>
+              <a href={CONTACT_INFO.mapsUrl} target="_blank" rel="noopener noreferrer" title="E.A.R. Car Rental location - Puerto Princesa City Palawan" className="text-white/80 text-lg font-light leading-relaxed group-hover:text-brand-950 transition-colors block">{CONTACT_INFO.address}</a>
             </div>
             <div className="glass-card group p-10 rounded-[2.5rem] border-white/5 hover:border-brand-500/30 transition-colors">
               <div className="flex items-center gap-3 mb-8">
@@ -545,7 +545,7 @@ const App: React.FC = () => {
                 </div>
                 <h4 className="text-sm font-bold uppercase tracking-widest text-white/50 group-hover:text-brand-950 transition-colors">Phone</h4>
               </div>
-              <a href={`tel:${CONTACT_INFO.phone}`} className="text-white/80 text-lg font-light hover:text-brand-950 transition-colors block">{CONTACT_INFO.phone}</a>
+              <a href={`tel:${CONTACT_INFO.phone}`} title="Call E.A.R. Car Rental Puerto Princesa" className="text-white/80 text-lg font-light hover:text-brand-950 transition-colors block">{CONTACT_INFO.phone}</a>
               <p className="text-white/60 text-base mt-4 font-light group-hover:text-brand-950 transition-colors">{CONTACT_INFO.email}</p>
             </div>
           </div>
@@ -557,7 +557,7 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 rounded-full overflow-hidden border border-white/20">
-              <img src="https://raw.githubusercontent.com/bxxmzilla1/earcarrental/main/logo.png" alt="EAR Logo" className="w-full h-full object-cover" />
+              <img src="https://raw.githubusercontent.com/bxxmzilla1/earcarrental/main/logo.png" alt="E.A.R. Car Rental - Puerto Princesa Palawan Car Rental" className="w-full h-full object-cover" />
             </div>
             <div>
               <span className="text-lg font-bold tracking-tight">E.A.R. Car Rental</span>
@@ -565,8 +565,8 @@ const App: React.FC = () => {
             </div>
           </div>
           <div className="flex gap-8">
-            <a href="#" className="text-[11px] text-white/40 uppercase tracking-[0.2em] hover:text-white transition-colors font-bold">Privacy Policy</a>
-            <a href="#" className="text-[11px] text-white/40 uppercase tracking-[0.2em] hover:text-white transition-colors font-bold">Terms of Use</a>
+            <a href="#privacy-policy" title="E.A.R. Car Rental Privacy Policy" className="text-[11px] text-white/40 uppercase tracking-[0.2em] hover:text-white transition-colors font-bold">Privacy Policy</a>
+            <a href="#terms-of-use" title="E.A.R. Car Rental Terms of Use" className="text-[11px] text-white/40 uppercase tracking-[0.2em] hover:text-white transition-colors font-bold">Terms of Use</a>
           </div>
           <p className="text-[10px] text-white/30 uppercase tracking-[0.2em] font-bold">© 2025 E.A.R. Car Rental Services • Puerto Princesa City</p>
         </div>

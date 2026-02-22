@@ -1,7 +1,5 @@
 {
-  "name": "E.A.R. Car Rental Services",
-  "description": "A high-end, functional single-page car rental application for Palawan, featuring dynamic fleet management, unit details, and a seamless booking flow integrated with WhatsApp, Viber, and Messenger.",
-  "requestFramePermissions": [
-    "geolocation"
-  ]
+  "name": "E.A.R. Car Rental Puerto Princesa",
+  "description": "Car rental in Puerto Princesa City, Palawan. Rent sedans, SUVs, vans and pickup trucks for El Nido, Port Barton, San Vicente. Self-drive or with driver. Book online via WhatsApp, Viber, Messenger.",
+  "requestFramePermissions": ["geolocation"]
 }

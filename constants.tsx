@@ -100,6 +100,7 @@ export const CONTACT_INFO = {
   viber: '+639463493363',
   email: 'edralinomisonjr@gmail.com',
   address: 'Purok Mapagmahal, Brgy. San Jose, Puerto Princesa City, Palawan',
+  mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Purok+Mapagmahal%2C+Brgy.+San+Jose%2C+Puerto+Princesa+City%2C+Palawan',
   messenger: 'earrentals',
   facebook: 'https://www.facebook.com/share/16vrzvERpQ'
 };

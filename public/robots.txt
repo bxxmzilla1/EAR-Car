@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ear-car.vercel.app/sitemap.xml
