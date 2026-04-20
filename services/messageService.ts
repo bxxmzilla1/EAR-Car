@@ -27,6 +27,7 @@ const getLocationFee = (seats: string, area: string): string => {
 export const generateBookingSummary = (vehicle: Vehicle | string, booking: BookingData): string => {
   // Delivery & Pick-Up Fee is fixed at ₱300
   const deliveryFee = '300';
+  const securityDeposit = '3,000';
   const isUnitString = typeof vehicle === 'string';
   
   const unitInfo = isUnitString 
@@ -48,7 +49,7 @@ export const generateBookingSummary = (vehicle: Vehicle | string, booking: Booki
 💰 *Daily Rate:* ${dailyRate}
 🚚 *Delivery & Pick-Up Fee:* ₱${deliveryFee}
 🧽 *Car Wash Fee:* ${washFee}
-🛡️ *Security Deposit:* ₱2,000
+🛡️ *Security Deposit:* ₱${securityDeposit}
 📝 *Note:* Refundable after car return without damage
 ---------------------------------------
 Generated via EAR Website`;

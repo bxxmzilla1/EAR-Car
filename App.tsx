@@ -59,6 +59,7 @@ const App: React.FC = () => {
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [showSummaryStage, setShowSummaryStage] = useState(false);
   const [isGeneralBooking, setIsGeneralBooking] = useState(false);
+  const [availabilityCheckedById, setAvailabilityCheckedById] = useState<Record<number, boolean>>({});
   
   const [bookingForm, setBookingForm] = useState<BookingData>({
     customerName: '',
@@ -230,6 +231,8 @@ const App: React.FC = () => {
   };
 
   const currentUnit = unitOverride || selectedVehicle;
+  const SECURITY_DEPOSIT_PHP = 3000;
+  const MIN_RENTAL_DAYS = 3;
 
   return (
     <div className="min-h-screen bg-brand-50" id="top">
@@ -350,50 +353,86 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {FLEET_DATA.map((car) => (
-              <div 
-                key={car.id} 
-                className="group glass-card rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_-10px_rgba(58,127,136,0.2)] hover:-translate-y-1"
-              >
-                <div className="relative h-56 overflow-hidden">
-                  <img src={car.imageUrl} alt={`${car.brand} ${car.model}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 via-transparent to-transparent opacity-90"></div>
-                  <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded text-[10px] font-semibold tracking-widest text-white border border-white/10">
+              <div key={car.id} className="group rounded-[1.75rem] bg-white/80 border border-brand-950/10 shadow-[0_20px_60px_-25px_rgba(15,23,42,0.35)] overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+                <div className="relative h-56 overflow-hidden bg-brand-950/5">
+                  <img
+                    src={car.imageUrl}
+                    alt={`${car.brand} ${car.model}`}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-semibold tracking-widest text-white border border-white/10">
                     {car.year}
                   </div>
+
+                  <label className="absolute left-4 bottom-4 inline-flex items-center gap-2 bg-white/90 backdrop-blur-md border border-brand-950/10 shadow-sm rounded-full px-3 py-2 select-none cursor-pointer">
+                    <input
+                      type="checkbox"
+                      className="accent-brand-500"
+                      checked={availabilityCheckedById[car.id] ?? true}
+                      onChange={(e) => setAvailabilityCheckedById((prev) => ({ ...prev, [car.id]: e.target.checked }))}
+                      aria-label={`Check availability for ${car.brand} ${car.model}`}
+                    />
+                    <span className="text-xs font-semibold text-brand-950/80">Check availability</span>
+                  </label>
                 </div>
-                <div className="p-6 relative">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-brand-950 tracking-tight">{car.brand} {car.model}</h3>
-                      <p className="text-xs text-brand-950/50 mt-1">{car.color}</p>
+
+                <div className="p-6">
+                  <div className="flex items-start justify-between gap-6">
+                    <div className="min-w-0">
+                      <h3 className="text-xl font-bold text-brand-950 tracking-tight break-words">
+                        {car.brand} {car.model} <span className="text-brand-950/60 font-semibold">({car.color})</span>
+                      </h3>
+
+                      <div className="mt-3 space-y-2 text-sm text-brand-950/70">
+                        <div className="flex items-center gap-2">
+                          <Info className="w-4 h-4 text-brand-950/50" />
+                          <span className="font-semibold">Deposit:</span>
+                          <span>₱{SECURITY_DEPOSIT_PHP.toLocaleString()}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-4 h-4 text-brand-950/50" />
+                          <span>Puerto Princesa, Palawan, Philippines</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Clock className="w-4 h-4 text-brand-950/50" />
+                          <span>Minimum {MIN_RENTAL_DAYS} days rental</span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-4 mb-6 border-b border-brand-950/5 pb-4">
-                    <div className="flex items-center gap-1.5 text-brand-950/70">
-                      <Settings2 className="w-4 h-4" />
-                      <span className="text-xs font-medium">{car.trans}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5 text-brand-950/70">
-                      <Users className="w-4 h-4" />
-                      <span className="text-xs font-medium">{car.seats}</span>
+
+                    <div className="shrink-0 text-right">
+                      <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-brand-950/40">Price per day</p>
+                      <p className="text-4xl font-extrabold text-brand-950 tracking-tight">
+                        ₱{parsePrice(car.price).toLocaleString()}
+                      </p>
+                      <p className="text-sm text-brand-950/60 font-semibold mt-1">
+                        Monthly: ₱{(parsePrice(car.price) * 30).toLocaleString()}
+                      </p>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between">
-                    <div className="flex flex-col">
-                      <span className="text-3xl font-bold text-brand-500">₱{parsePrice(car.price).toLocaleString()}</span>
-                      <span className="text-[10px] uppercase text-brand-950/40 tracking-[0.2em] mt-1 font-bold">DAILY RATE</span>
+                  <div className="mt-5 flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-4 text-brand-950/70">
+                      <div className="flex items-center gap-1.5">
+                        <Settings2 className="w-4 h-4" />
+                        <span className="text-xs font-semibold">{car.trans === 'AT' ? 'Automatic' : 'Manual'}</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <Users className="w-4 h-4" />
+                        <span className="text-xs font-semibold">{car.seats}</span>
+                      </div>
                     </div>
-                    <button 
-                      onClick={() => handleOpenDetails(car)}
-                      className="bg-brand-500/10 border border-brand-500/20 hover:bg-brand-500 text-brand-500 hover:text-white transition-all rounded-full p-4 flex items-center justify-center btn-neon shadow-sm"
-                    >
-                      <ArrowUpRight className="w-6 h-6" />
-                    </button>
                   </div>
+
+                  <button
+                    onClick={() => handleOpenDetails(car)}
+                    className="mt-6 w-full bg-brand-500 text-white py-4 rounded-2xl font-extrabold uppercase tracking-widest text-xs hover:bg-brand-800 transition-colors shadow-[0_15px_35px_-15px_rgba(58,127,136,0.6)] btn-neon"
+                  >
+                    View Deal
+                  </button>
                 </div>
               </div>
             ))}
@@ -691,7 +730,7 @@ const App: React.FC = () => {
                     </div>
                     <div className="flex justify-between pt-2 border-t border-brand-950/5">
                       <span className="text-brand-950/40">Security Deposit</span>
-                      <span className="font-bold">2,000</span>
+                      <span className="font-bold">₱{SECURITY_DEPOSIT_PHP.toLocaleString()}</span>
                     </div>
                   </div>
 
