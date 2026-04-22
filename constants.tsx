@@ -68,6 +68,14 @@ export const FLEET_DATA: Vehicle[] = [
     description: 'Travel in first-class comfort. The GL Grandia features premium seating and superior climate control for the ultimate group journey.',
     fuelType: 'Diesel', serviceType: 'Self-drive or with driver'
   },
+  {
+    id: 16, year: '2025', brand: 'Yamaha', model: 'Aerox 155', trans: 'AT', seats: '2 Seaters', color: 'Black', price: '800', wash: '100',
+    securityDepositPhp: 1000,
+    minRentalDays: 3,
+    imageUrl: 'https://github.com/bxxmzilla1/earcarrental/blob/main/Yamaha%20Aerox%20155.png?raw=true',
+    description: 'A sporty and fuel-efficient scooter for quick city rides around Puerto Princesa and nearby Palawan destinations.',
+    fuelType: 'Gasoline', serviceType: 'Self-drive'
+  },
 ];
 
 export const CONTACT_INFO = {

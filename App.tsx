@@ -233,6 +233,8 @@ const App: React.FC = () => {
   const currentUnit = unitOverride || selectedVehicle;
   const SECURITY_DEPOSIT_PHP = 3000;
   const MIN_RENTAL_DAYS = 3;
+  const getSecurityDeposit = (vehicle: Vehicle) => vehicle.securityDepositPhp ?? SECURITY_DEPOSIT_PHP;
+  const getMinRentalDays = (vehicle: Vehicle) => vehicle.minRentalDays ?? MIN_RENTAL_DAYS;
 
   return (
     <div className="min-h-screen bg-brand-50" id="top">
@@ -390,7 +392,7 @@ const App: React.FC = () => {
                         <div className="flex items-center gap-2">
                           <Info className="w-4 h-4 text-brand-950/50" />
                           <span className="font-semibold">Deposit:</span>
-                          <span>₱{SECURITY_DEPOSIT_PHP.toLocaleString()}</span>
+                          <span>₱{getSecurityDeposit(car).toLocaleString()}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <MapPin className="w-4 h-4 text-brand-950/50" />
@@ -398,7 +400,7 @@ const App: React.FC = () => {
                         </div>
                         <div className="flex items-center gap-2">
                           <Clock className="w-4 h-4 text-brand-950/50" />
-                          <span>Minimum {MIN_RENTAL_DAYS} days rental</span>
+                          <span>Minimum {getMinRentalDays(car)} days rental</span>
                         </div>
                       </div>
                     </div>
@@ -730,7 +732,7 @@ const App: React.FC = () => {
                     </div>
                     <div className="flex justify-between pt-2 border-t border-brand-950/5">
                       <span className="text-brand-950/40">Security Deposit</span>
-                      <span className="font-bold">₱{SECURITY_DEPOSIT_PHP.toLocaleString()}</span>
+                      <span className="font-bold">₱{typeof currentUnit === 'string' ? SECURITY_DEPOSIT_PHP.toLocaleString() : getSecurityDeposit(currentUnit).toLocaleString()}</span>
                     </div>
                   </div>
 

@@ -9,6 +9,8 @@ export interface Vehicle {
   color: string;
   price: string;
   wash: string;
+  securityDepositPhp?: number;
+  minRentalDays?: number;
   imageUrl: string;
   description?: string;
   fuelType?: string;

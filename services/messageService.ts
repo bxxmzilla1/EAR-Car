@@ -27,8 +27,8 @@ const getLocationFee = (seats: string, area: string): string => {
 export const generateBookingSummary = (vehicle: Vehicle | string, booking: BookingData): string => {
   // Delivery & Pick-Up Fee is fixed at ₱300
   const deliveryFee = '300';
-  const securityDeposit = '3,000';
   const isUnitString = typeof vehicle === 'string';
+  const securityDeposit = isUnitString ? '3,000' : (vehicle.securityDepositPhp ?? 3000).toLocaleString();
   
   const unitInfo = isUnitString 
     ? vehicle 
