@@ -271,7 +271,7 @@ const App: React.FC = () => {
             <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} title="Contact E.A.R. Car Rental Puerto Princesa" className="text-2xl font-serif font-light text-white hover:text-brand-100 transition-colors">Contact</a>
             <button 
               onClick={(e) => { handleStartBooking(); setMobileMenuOpen(false); }}
-              className="bg-white text-brand-950 px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs btn-neon border border-transparent shadow-lg"
+              className="bg-brand-950 text-brand-50 px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs btn-neon border border-white/10 shadow-lg hover:bg-white hover:text-black transition-colors"
             >
               Book Your Unit
             </button>
@@ -289,7 +289,7 @@ const App: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-500/10 rounded-full blur-[120px] animate-pulse-slow pointer-events-none"></div>
         
         <div className="relative z-10 max-w-5xl mx-auto px-6 w-full flex flex-col items-center justify-center text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full bg-white/45 border border-brand-950/10 backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full bg-brand-100/60 border border-white/10 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
             <span className="text-xs font-medium tracking-wide text-brand-950">Premium Units Available 2025</span>
           </div>
@@ -357,7 +357,7 @@ const App: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {FLEET_DATA.map((car) => (
-              <div key={car.id} className="group rounded-[1.75rem] bg-white/80 border border-brand-950/10 shadow-[0_20px_60px_-25px_rgba(15,23,42,0.35)] overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+              <div key={car.id} className="group rounded-[1.75rem] bg-brand-100/40 border border-white/10 shadow-[0_20px_60px_-25px_rgba(0,0,0,0.7)] overflow-hidden transition-transform duration-300 hover:-translate-y-1">
                 <div className="relative h-56 overflow-hidden bg-brand-950/5">
                   <img
                     src={car.imageUrl}
@@ -369,7 +369,7 @@ const App: React.FC = () => {
                     {car.year}
                   </div>
 
-                  <label className="absolute left-4 bottom-4 inline-flex items-center gap-2 bg-white/90 backdrop-blur-md border border-brand-950/10 shadow-sm rounded-full px-3 py-2 select-none cursor-pointer">
+                  <label className="absolute left-4 bottom-4 inline-flex items-center gap-2 bg-brand-100/60 backdrop-blur-md border border-white/10 shadow-sm rounded-full px-3 py-2 select-none cursor-pointer">
                     <input
                       type="checkbox"
                       className="accent-brand-500"
@@ -500,7 +500,7 @@ const App: React.FC = () => {
       </section>
 
       {/* Services - Value Props */}
-      <section id="services" className="py-24 bg-white/30 border-t border-brand-950/5 scroll-mt-20 relative z-10">
+      <section id="services" className="py-24 bg-brand-100/10 border-t border-white/5 scroll-mt-20 relative z-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-12">
             <div className="glass-card p-8 rounded-2xl relative overflow-hidden group">
@@ -643,7 +643,7 @@ const App: React.FC = () => {
                         name="selectedUnitId" 
                         value={unitOverride ? `service_${unitOverride}` : selectedVehicle?.id} 
                         onChange={handleInputChange} 
-                        className="w-full bg-white border border-brand-950/10 rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm"
+                        className="w-full bg-brand-100/40 border border-white/10 rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm"
                       >
                         <optgroup label="Units">
                           {FLEET_DATA.map(v => (
@@ -660,33 +660,33 @@ const App: React.FC = () => {
                   )}
                   <div className="md:col-span-2 space-y-2">
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Name</label>
-                    <input name="customerName" value={bookingForm.customerName} onChange={handleInputChange} placeholder="Your Full Name" className={`w-full bg-white border ${formErrors.customerName ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm`} />
+                    <input name="customerName" value={bookingForm.customerName} onChange={handleInputChange} placeholder="Your Full Name" className={`w-full bg-brand-100/40 border ${formErrors.customerName ? 'border-red-500' : 'border-white/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm`} />
                   </div>
                   <div className="space-y-2">
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Contact</label>
-                    <input name="contactNumber" value={bookingForm.contactNumber} onChange={handleInputChange} placeholder="Phone Number" className={`w-full bg-white border ${formErrors.contactNumber ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm`} />
+                    <input name="contactNumber" value={bookingForm.contactNumber} onChange={handleInputChange} placeholder="Phone Number" className={`w-full bg-brand-100/40 border ${formErrors.contactNumber ? 'border-red-500' : 'border-white/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm`} />
                   </div>
                   <div className="space-y-2">
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Deliver Location</label>
-                    <input name="deliveryLocation" value={bookingForm.deliveryLocation} onChange={handleInputChange} placeholder="Pickup point" className={`w-full bg-white border ${formErrors.deliveryLocation ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm`} />
+                    <input name="deliveryLocation" value={bookingForm.deliveryLocation} onChange={handleInputChange} placeholder="Pickup point" className={`w-full bg-brand-100/40 border ${formErrors.deliveryLocation ? 'border-red-500' : 'border-white/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm`} />
                   </div>
                   <div className="space-y-2">
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Start Date of Rent</label>
                     <div className="flex gap-3">
-                      <input name="startDate" type="date" value={bookingForm.startDate} onChange={handleInputChange} className={`flex-1 min-w-0 bg-white border ${formErrors.startDate ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all text-brand-950 shadow-sm`} />
-                      <input name="startTime" type="time" value={bookingForm.startTime} onChange={handleInputChange} title="Start time of rent" className={`w-28 shrink-0 bg-white border border-brand-950/10 rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all text-brand-950 shadow-sm`} aria-label="Start time of rent" />
+                      <input name="startDate" type="date" value={bookingForm.startDate} onChange={handleInputChange} className={`flex-1 min-w-0 bg-brand-100/40 border ${formErrors.startDate ? 'border-red-500' : 'border-white/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all text-brand-950 shadow-sm`} />
+                      <input name="startTime" type="time" value={bookingForm.startTime} onChange={handleInputChange} title="Start time of rent" className={`w-28 shrink-0 bg-brand-100/40 border border-white/10 rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all text-brand-950 shadow-sm`} aria-label="Start time of rent" />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">End Date of Rent</label>
                     <div className="flex gap-3">
-                      <input name="endDate" type="date" value={bookingForm.endDate} onChange={handleInputChange} className={`flex-1 min-w-0 bg-white border ${formErrors.endDate ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all text-brand-950 shadow-sm`} />
-                      <input name="endTime" type="time" value={bookingForm.endTime} onChange={handleInputChange} title="End time of rent" className={`w-28 shrink-0 bg-white border border-brand-950/10 rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all text-brand-950 shadow-sm`} aria-label="End time of rent" />
+                      <input name="endDate" type="date" value={bookingForm.endDate} onChange={handleInputChange} className={`flex-1 min-w-0 bg-brand-100/40 border ${formErrors.endDate ? 'border-red-500' : 'border-white/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all text-brand-950 shadow-sm`} />
+                      <input name="endTime" type="time" value={bookingForm.endTime} onChange={handleInputChange} title="End time of rent" className={`w-28 shrink-0 bg-brand-100/40 border border-white/10 rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all text-brand-950 shadow-sm`} aria-label="End time of rent" />
                     </div>
                   </div>
                   <div className="md:col-span-2 space-y-2">
                     <label className="text-[12px] uppercase text-brand-950/40 tracking-[0.2em] font-extrabold">Pick-Up Location</label>
-                    <input name="pickupLocation" value={bookingForm.pickupLocation} onChange={handleInputChange} placeholder="Return point" className={`w-full bg-white border ${formErrors.pickupLocation ? 'border-red-500' : 'border-brand-950/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm`} />
+                    <input name="pickupLocation" value={bookingForm.pickupLocation} onChange={handleInputChange} placeholder="Return point" className={`w-full bg-brand-100/40 border ${formErrors.pickupLocation ? 'border-red-500' : 'border-white/10'} rounded-2xl px-5 py-4 text-base focus:outline-none focus:border-brand-500 transition-all shadow-sm`} />
                   </div>
                 </div>
 
@@ -744,15 +744,15 @@ const App: React.FC = () => {
                 <div className="space-y-4 sm:space-y-6">
                   <p className="text-center text-[11px] sm:text-[12px] uppercase text-brand-950/40 tracking-[0.3em] sm:tracking-[0.4em] font-extrabold">Confirm & Send Inquiry Via</p>
                   <div className="grid grid-cols-3 gap-3 sm:gap-6">
-                    <button onClick={() => handleSubmitBooking(ContactPlatform.WHATSAPP)} className="flex flex-col items-center gap-3 p-5 bg-white border border-brand-950/10 rounded-3xl transition-all text-brand-500 btn-neon shadow-sm">
+                    <button onClick={() => handleSubmitBooking(ContactPlatform.WHATSAPP)} className="flex flex-col items-center gap-3 p-5 bg-brand-100/40 border border-white/10 rounded-3xl transition-all text-brand-500 btn-neon shadow-sm">
                       <MessageCircle className="w-8 h-8" />
                       <span className="text-[10px] font-extrabold uppercase tracking-widest">WhatsApp</span>
                     </button>
-                    <button onClick={() => handleSubmitBooking(ContactPlatform.VIBER)} className="flex flex-col items-center gap-3 p-5 bg-white border border-brand-950/10 rounded-3xl transition-all text-brand-500 btn-neon shadow-sm">
+                    <button onClick={() => handleSubmitBooking(ContactPlatform.VIBER)} className="flex flex-col items-center gap-3 p-5 bg-brand-100/40 border border-white/10 rounded-3xl transition-all text-brand-500 btn-neon shadow-sm">
                       <Send className="w-8 h-8" />
                       <span className="text-[10px] font-extrabold uppercase tracking-widest">Viber</span>
                     </button>
-                    <button onClick={() => handleSubmitBooking(ContactPlatform.MESSENGER)} className="flex flex-col items-center gap-3 p-5 bg-white border border-brand-950/10 rounded-3xl transition-all text-brand-500 btn-neon shadow-sm">
+                    <button onClick={() => handleSubmitBooking(ContactPlatform.MESSENGER)} className="flex flex-col items-center gap-3 p-5 bg-brand-100/40 border border-white/10 rounded-3xl transition-all text-brand-500 btn-neon shadow-sm">
                       <Facebook className="w-8 h-8" />
                       <span className="text-[10px] font-extrabold uppercase tracking-widest">Messenger</span>
                     </button>
