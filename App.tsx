@@ -245,33 +245,33 @@ const App: React.FC = () => {
             <div className="w-10 h-10 rounded-full overflow-hidden border border-white/20 shadow-lg group-hover:scale-105 transition-transform duration-300 shrink-0">
               <img src="https://raw.githubusercontent.com/bxxmzilla1/earcarrental/main/logo.png" alt="E.A.R. Car Rental - Puerto Princesa Palawan Car Rental" className="w-full h-full object-cover" />
             </div>
-            <span className="text-lg font-medium tracking-tight text-white group-hover:text-brand-100 transition-colors flex items-center gap-2">
+            <span className="text-lg font-medium tracking-tight text-brand-950 group-hover:text-brand-800 transition-colors flex items-center gap-2">
               <span className="font-bold">E.A.R.</span>
-              <span className="text-white/60 text-sm font-normal hidden sm:inline">Car Rental Services | Palawan</span>
+              <span className="text-brand-950/60 text-sm font-normal hidden sm:inline">Car Rental Services | Palawan</span>
             </span>
           </a>
           
           <div className="flex items-center gap-8 ml-auto">
             <div className="hidden md:flex items-center gap-8 mr-4">
-              <a href="#fleet" onClick={(e) => scrollToSection(e, 'fleet')} title="View car rental fleet in Puerto Princesa Palawan" className="text-xs font-bold uppercase tracking-widest text-white/70 hover:text-white transition-colors">Our Collection</a>
-              <a href="#services" onClick={(e) => scrollToSection(e, 'services')} title="Car rental services - El Nido, Port Barton, San Vicente" className="text-xs font-bold uppercase tracking-widest text-white/70 hover:text-white transition-colors">Services</a>
-              <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} title="Contact E.A.R. Car Rental Puerto Princesa" className="text-xs font-bold uppercase tracking-widest text-white/70 hover:text-white transition-colors">Contact</a>
+              <a href="#fleet" onClick={(e) => scrollToSection(e, 'fleet')} title="View car rental fleet in Puerto Princesa Palawan" className="text-xs font-bold uppercase tracking-widest text-brand-950/70 hover:text-brand-950 transition-colors">Our Collection</a>
+              <a href="#services" onClick={(e) => scrollToSection(e, 'services')} title="Car rental services - El Nido, Port Barton, San Vicente" className="text-xs font-bold uppercase tracking-widest text-brand-950/70 hover:text-brand-950 transition-colors">Services</a>
+              <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} title="Contact E.A.R. Car Rental Puerto Princesa" className="text-xs font-bold uppercase tracking-widest text-brand-950/70 hover:text-brand-950 transition-colors">Contact</a>
             </div>
 
-            <button className="text-white hover:text-brand-100 transition-colors btn-neon rounded-full p-1" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            <button className="text-brand-950/70 hover:text-brand-950 transition-colors btn-neon rounded-full p-1" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               <Menu className="w-6 h-6" />
             </button>
           </div>
         </div>
 
         {mobileMenuOpen && (
-          <div className="absolute top-full left-0 w-full glass-nav border-b border-white/10 p-8 flex flex-col items-center gap-8 animate-in slide-in-from-top duration-300 shadow-2xl">
-            <a href="#fleet" onClick={(e) => scrollToSection(e, 'fleet')} title="View car rental fleet in Puerto Princesa Palawan" className="text-2xl font-serif font-light text-white hover:text-brand-100 transition-colors">Our Collection</a>
-            <a href="#services" onClick={(e) => scrollToSection(e, 'services')} title="Car rental services - El Nido, Port Barton, San Vicente" className="text-2xl font-serif font-light text-white hover:text-brand-100 transition-colors">Services</a>
-            <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} title="Contact E.A.R. Car Rental Puerto Princesa" className="text-2xl font-serif font-light text-white hover:text-brand-100 transition-colors">Contact</a>
+          <div className="absolute top-full left-0 w-full glass-nav border-b border-brand-950/10 p-8 flex flex-col items-center gap-8 animate-in slide-in-from-top duration-300 shadow-2xl">
+            <a href="#fleet" onClick={(e) => scrollToSection(e, 'fleet')} title="View car rental fleet in Puerto Princesa Palawan" className="text-2xl font-serif font-light text-brand-950 hover:text-brand-800 transition-colors">Our Collection</a>
+            <a href="#services" onClick={(e) => scrollToSection(e, 'services')} title="Car rental services - El Nido, Port Barton, San Vicente" className="text-2xl font-serif font-light text-brand-950 hover:text-brand-800 transition-colors">Services</a>
+            <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} title="Contact E.A.R. Car Rental Puerto Princesa" className="text-2xl font-serif font-light text-brand-950 hover:text-brand-800 transition-colors">Contact</a>
             <button 
               onClick={(e) => { handleStartBooking(); setMobileMenuOpen(false); }}
-              className="bg-white text-brand-950 px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs btn-neon border border-transparent shadow-lg"
+              className="bg-brand-950 text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs btn-neon border border-transparent shadow-lg hover:bg-brand-800 transition-colors"
             >
               Book Your Unit
             </button>
@@ -324,23 +324,23 @@ const App: React.FC = () => {
       </section>
 
       {/* Stats Bar */}
-      <section className="border-y border-white/10 bg-brand-950 backdrop-blur-sm relative z-20 py-16 sm:py-24">
+      <section className="border-y border-brand-950/10 bg-white/70 backdrop-blur-sm relative z-20 py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="space-y-1 text-center md:text-left">
-            <p className="text-3xl font-medium text-white tracking-tight font-serif">15+</p>
-            <p className="text-xs uppercase tracking-widest text-white/50">Available Rental Vehicles</p>
+            <p className="text-3xl font-medium text-brand-950 tracking-tight font-serif">15+</p>
+            <p className="text-xs uppercase tracking-widest text-brand-950/50">Available Rental Vehicles</p>
           </div>
           <div className="space-y-1 text-center md:text-left">
-            <p className="text-3xl font-medium text-white tracking-tight font-serif">24/7</p>
-            <p className="uppercase text-xs text-white/50 tracking-widest">Customer Support in Palawan</p>
+            <p className="text-3xl font-medium text-brand-950 tracking-tight font-serif">24/7</p>
+            <p className="uppercase text-xs text-brand-950/50 tracking-widest">Customer Support in Palawan</p>
           </div>
           <div className="space-y-1 text-center md:text-left">
-            <p className="text-3xl font-medium text-white tracking-tight font-serif">100%</p>
-            <p className="text-xs uppercase tracking-widest text-white/50">Trusted Car Rental in Puerto Princesa</p>
+            <p className="text-3xl font-medium text-brand-950 tracking-tight font-serif">100%</p>
+            <p className="text-xs uppercase tracking-widest text-brand-950/50">Trusted Car Rental in Puerto Princesa</p>
           </div>
           <div className="space-y-1 text-center md:text-left">
-            <p className="text-3xl font-medium text-white tracking-tight font-serif">0%</p>
-            <p className="text-xs uppercase tracking-widest text-white/50">Transparent Pricing - No Hidden Fees</p>
+            <p className="text-3xl font-medium text-brand-950 tracking-tight font-serif">0%</p>
+            <p className="text-xs uppercase tracking-widest text-brand-950/50">Transparent Pricing - No Hidden Fees</p>
           </div>
         </div>
       </section>
@@ -538,78 +538,78 @@ const App: React.FC = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 relative overflow-hidden bg-brand-950 scroll-mt-20">
+      <section id="contact" className="py-32 relative overflow-hidden bg-white scroll-mt-20">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-brand-500/10 blur-[120px] pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
-            <h2 className="text-5xl md:text-6xl font-medium text-white tracking-tight font-serif drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">Connect With Us</h2>
-            <div className="w-24 h-0.5 bg-white/20 mx-auto rounded-full"></div>
-            <p className="text-white/60 text-lg md:text-xl font-light leading-relaxed">Quick and secure booking support via WhatsApp, Viber, or Facebook. Serving Brgy. San Jose, Puerto Princesa City, El Nido, and nearby areas in Palawan.</p>
+            <h2 className="text-5xl md:text-6xl font-medium text-brand-950 tracking-tight font-serif">Connect With Us</h2>
+            <div className="w-24 h-0.5 bg-brand-950/10 mx-auto rounded-full"></div>
+            <p className="text-brand-950/60 text-lg md:text-xl font-light leading-relaxed">Quick and secure booking support via WhatsApp, Viber, or Facebook. Serving Brgy. San Jose, Puerto Princesa City, El Nido, and nearby areas in Palawan.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
-            <button onClick={() => openPlatformLink(ContactPlatform.WHATSAPP, 'Hi! I\'d like to inquire about car rental.')} className="glass-card group p-8 rounded-[2rem] hover:border-brand-400/50 transition-all duration-500 hover:shadow-[0_0_40px_-10px_rgba(127,169,175,0.2)] flex flex-col items-center text-center btn-neon border border-white/5">
-              <div className="w-16 h-16 rounded-3xl bg-white/5 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform group-hover:text-brand-950">
+            <button onClick={() => openPlatformLink(ContactPlatform.WHATSAPP, 'Hi! I\'d like to inquire about car rental.')} className="glass-card group p-8 rounded-[2rem] hover:border-brand-400/50 transition-all duration-500 hover:shadow-[0_0_40px_-10px_rgba(47,125,136,0.18)] flex flex-col items-center text-center btn-neon border border-brand-950/10">
+              <div className="w-16 h-16 rounded-3xl bg-brand-950/5 flex items-center justify-center text-brand-950 mb-6 group-hover:scale-110 transition-transform group-hover:text-brand-800">
                 <MessageCircle className="w-8 h-8" />
               </div>
-              <h4 className="text-sm font-bold uppercase tracking-widest text-white/50 mb-2 group-hover:text-brand-950 transition-colors">WhatsApp</h4>
-              <p className="text-xl font-medium text-white group-hover:text-brand-950 transition-colors">+63 946 349 3363</p>
+              <h4 className="text-sm font-bold uppercase tracking-widest text-brand-950/50 mb-2 group-hover:text-brand-950 transition-colors">WhatsApp</h4>
+              <p className="text-xl font-medium text-brand-950 group-hover:text-brand-950 transition-colors">+63 946 349 3363</p>
             </button>
-            <button onClick={() => openPlatformLink(ContactPlatform.VIBER, 'Hi! I\'d like to inquire about car rental.')} className="glass-card group p-8 rounded-[2rem] hover:border-brand-400/50 transition-all duration-500 hover:shadow-[0_0_40px_-10px_rgba(127,169,175,0.2)] flex flex-col items-center text-center btn-neon border border-white/5">
-              <div className="w-16 h-16 rounded-3xl bg-white/5 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform group-hover:text-brand-950">
+            <button onClick={() => openPlatformLink(ContactPlatform.VIBER, 'Hi! I\'d like to inquire about car rental.')} className="glass-card group p-8 rounded-[2rem] hover:border-brand-400/50 transition-all duration-500 hover:shadow-[0_0_40px_-10px_rgba(47,125,136,0.18)] flex flex-col items-center text-center btn-neon border border-brand-950/10">
+              <div className="w-16 h-16 rounded-3xl bg-brand-950/5 flex items-center justify-center text-brand-950 mb-6 group-hover:scale-110 transition-transform group-hover:text-brand-800">
                 <Send className="w-8 h-8" />
               </div>
-              <h4 className="text-sm font-bold uppercase tracking-widest text-white/50 mb-2 group-hover:text-brand-950 transition-colors">Viber</h4>
-              <p className="text-xl font-medium text-white group-hover:text-brand-950 transition-colors">+63 946 349 3363</p>
+              <h4 className="text-sm font-bold uppercase tracking-widest text-brand-950/50 mb-2 group-hover:text-brand-950 transition-colors">Viber</h4>
+              <p className="text-xl font-medium text-brand-950 group-hover:text-brand-950 transition-colors">+63 946 349 3363</p>
             </button>
-            <button onClick={() => openPlatformLink(ContactPlatform.MESSENGER, '')} className="glass-card group p-8 rounded-[2rem] hover:border-brand-400/50 transition-all duration-500 hover:shadow-[0_0_40px_-10px_rgba(127,169,175,0.2)] flex flex-col items-center text-center btn-neon border border-white/5">
-              <div className="w-16 h-16 rounded-3xl bg-white/5 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform group-hover:text-brand-950">
+            <button onClick={() => openPlatformLink(ContactPlatform.MESSENGER, '')} className="glass-card group p-8 rounded-[2rem] hover:border-brand-400/50 transition-all duration-500 hover:shadow-[0_0_40px_-10px_rgba(47,125,136,0.18)] flex flex-col items-center text-center btn-neon border border-brand-950/10">
+              <div className="w-16 h-16 rounded-3xl bg-brand-950/5 flex items-center justify-center text-brand-950 mb-6 group-hover:scale-110 transition-transform group-hover:text-brand-800">
                 <Facebook className="w-8 h-8" />
               </div>
-              <h4 className="text-sm font-bold uppercase tracking-widest text-white/50 mb-2 group-hover:text-brand-950 transition-colors">Facebook</h4>
-              <p className="text-xl font-medium text-white group-hover:text-brand-950 transition-colors">E.A.R. Car Rental</p>
+              <h4 className="text-sm font-bold uppercase tracking-widest text-brand-950/50 mb-2 group-hover:text-brand-950 transition-colors">Facebook</h4>
+              <p className="text-xl font-medium text-brand-950 group-hover:text-brand-950 transition-colors">E.A.R. Car Rental</p>
             </button>
           </div>
           <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div className="glass-card group p-10 rounded-[2.5rem] border-white/5 hover:border-brand-500/30 transition-colors">
+            <div className="glass-card group p-10 rounded-[2.5rem] border-brand-950/10 hover:border-brand-500/30 transition-colors">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-brand-100 group-hover:text-brand-950 transition-colors">
+                <div className="w-8 h-8 rounded-full bg-brand-950/5 flex items-center justify-center text-brand-800 group-hover:text-brand-950 transition-colors">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <h4 className="text-sm font-bold uppercase tracking-widest text-white/50 group-hover:text-brand-950 transition-colors">Location</h4>
+                <h4 className="text-sm font-bold uppercase tracking-widest text-brand-950/50 group-hover:text-brand-950 transition-colors">Location</h4>
               </div>
-              <a href={CONTACT_INFO.mapsUrl} target="_blank" rel="noopener noreferrer" title="E.A.R. Car Rental location - Puerto Princesa City Palawan" className="text-white/80 text-lg font-light leading-relaxed group-hover:text-brand-950 transition-colors block">{CONTACT_INFO.address}</a>
+              <a href={CONTACT_INFO.mapsUrl} target="_blank" rel="noopener noreferrer" title="E.A.R. Car Rental location - Puerto Princesa City Palawan" className="text-brand-950/80 text-lg font-light leading-relaxed group-hover:text-brand-950 transition-colors block">{CONTACT_INFO.address}</a>
             </div>
-            <div className="glass-card group p-10 rounded-[2.5rem] border-white/5 hover:border-brand-500/30 transition-colors">
+            <div className="glass-card group p-10 rounded-[2.5rem] border-brand-950/10 hover:border-brand-500/30 transition-colors">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-brand-100 group-hover:text-brand-950 transition-colors">
+                <div className="w-8 h-8 rounded-full bg-brand-950/5 flex items-center justify-center text-brand-800 group-hover:text-brand-950 transition-colors">
                   <Smartphone className="w-4 h-4" />
                 </div>
-                <h4 className="text-sm font-bold uppercase tracking-widest text-white/50 group-hover:text-brand-950 transition-colors">Phone</h4>
+                <h4 className="text-sm font-bold uppercase tracking-widest text-brand-950/50 group-hover:text-brand-950 transition-colors">Phone</h4>
               </div>
-              <a href={`tel:${CONTACT_INFO.phone}`} title="Call E.A.R. Car Rental Puerto Princesa" className="text-white/80 text-lg font-light hover:text-brand-950 transition-colors block">{CONTACT_INFO.phone}</a>
-              <p className="text-white/60 text-base mt-4 font-light group-hover:text-brand-950 transition-colors">{CONTACT_INFO.email}</p>
+              <a href={`tel:${CONTACT_INFO.phone}`} title="Call E.A.R. Car Rental Puerto Princesa" className="text-brand-950/80 text-lg font-light hover:text-brand-950 transition-colors block">{CONTACT_INFO.phone}</a>
+              <p className="text-brand-950/60 text-base mt-4 font-light group-hover:text-brand-950 transition-colors">{CONTACT_INFO.email}</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-brand-950/50 border-t border-white/5 relative z-10 py-12 text-white">
+      <footer className="bg-brand-100 border-t border-brand-950/10 relative z-10 py-12 text-brand-950">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full overflow-hidden border border-white/20">
+            <div className="w-10 h-10 rounded-full overflow-hidden border border-brand-950/10">
               <img src="https://raw.githubusercontent.com/bxxmzilla1/earcarrental/main/logo.png" alt="E.A.R. Car Rental - Puerto Princesa Palawan Car Rental" className="w-full h-full object-cover" />
             </div>
             <div>
               <span className="text-lg font-bold tracking-tight">E.A.R. Car Rental</span>
-              <span className="text-[10px] text-white/40 uppercase tracking-[0.3em] font-bold block">Palawan&apos;s Premier Choice</span>
+              <span className="text-[10px] text-brand-950/50 uppercase tracking-[0.3em] font-bold block">Palawan&apos;s Premier Choice</span>
             </div>
           </div>
           <div className="flex gap-8">
-            <a href="#privacy-policy" title="E.A.R. Car Rental Privacy Policy" className="text-[11px] text-white/40 uppercase tracking-[0.2em] hover:text-white transition-colors font-bold">Privacy Policy</a>
-            <a href="#terms-of-use" title="E.A.R. Car Rental Terms of Use" className="text-[11px] text-white/40 uppercase tracking-[0.2em] hover:text-white transition-colors font-bold">Terms of Use</a>
+            <a href="#privacy-policy" title="E.A.R. Car Rental Privacy Policy" className="text-[11px] text-brand-950/50 uppercase tracking-[0.2em] hover:text-brand-950 transition-colors font-bold">Privacy Policy</a>
+            <a href="#terms-of-use" title="E.A.R. Car Rental Terms of Use" className="text-[11px] text-brand-950/50 uppercase tracking-[0.2em] hover:text-brand-950 transition-colors font-bold">Terms of Use</a>
           </div>
-          <p className="text-[10px] text-white/30 uppercase tracking-[0.2em] font-bold">© 2025 E.A.R. Car Rental Services • Puerto Princesa City</p>
+          <p className="text-[10px] text-brand-950/40 uppercase tracking-[0.2em] font-bold">© 2025 E.A.R. Car Rental Services • Puerto Princesa City</p>
         </div>
       </footer>
 
@@ -769,15 +769,15 @@ const App: React.FC = () => {
       {showDetailModal && selectedVehicle && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6">
           <div className="absolute inset-0 bg-brand-950/80 backdrop-blur-xl" onClick={handleCloseDetails}></div>
-          <div className="bg-brand-950 border border-brand-500/20 rounded-[2rem] sm:rounded-[2.5rem] shadow-[0_0_60px_rgba(31,75,87,0.4)] relative overflow-hidden w-full max-w-2xl z-10 animate-in zoom-in duration-300 max-h-[95vh] flex flex-col">
-            <div className="overflow-y-auto overscroll-contain text-white flex-1 min-h-0">
+          <div className="bg-white border border-brand-950/10 rounded-[2rem] sm:rounded-[2.5rem] shadow-[0_0_60px_rgba(0,0,0,0.18)] relative overflow-hidden w-full max-w-2xl z-10 animate-in zoom-in duration-300 max-h-[95vh] flex flex-col">
+            <div className="overflow-y-auto overscroll-contain text-brand-950 flex-1 min-h-0">
               {/* Image Section */}
               <div className="relative h-48 sm:h-80 overflow-hidden shrink-0">
                 <img src={selectedVehicle.imageUrl} alt={selectedVehicle.model} className="w-full h-full object-cover opacity-90" />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-950 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
                 <button 
                   onClick={handleCloseDetails} 
-                  className="absolute top-4 right-4 sm:top-8 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-brand-500/30 backdrop-blur-md flex items-center justify-center transition-all text-white shrink-0"
+                  className="absolute top-4 right-4 sm:top-8 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brand-950/5 hover:bg-brand-950/10 backdrop-blur-md flex items-center justify-center transition-all text-brand-950 shrink-0"
                 >
                   <XCircle className="w-5 h-5 sm:w-6 sm:h-6" />
                 </button>
@@ -787,64 +787,64 @@ const App: React.FC = () => {
               <div className="px-5 sm:px-8 md:px-12 pb-8 sm:pb-12 pt-4 space-y-6 sm:space-y-10">
                 {/* Brand & Model Header */}
                 <div className="space-y-1">
-                  <h3 className="text-2xl sm:text-4xl font-bold tracking-tight text-white break-words">{selectedVehicle.brand} {selectedVehicle.model}</h3>
-                  <p className="text-brand-100/80 text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] font-bold break-words">{selectedVehicle.year} Edition • {selectedVehicle.color}</p>
+                  <h3 className="text-2xl sm:text-4xl font-bold tracking-tight text-brand-950 break-words">{selectedVehicle.brand} {selectedVehicle.model}</h3>
+                  <p className="text-brand-950/60 text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] font-bold break-words">{selectedVehicle.year} Edition • {selectedVehicle.color}</p>
                 </div>
 
                 {/* Overview */}
                 <div className="space-y-3 sm:space-y-4">
-                  <div className="flex items-center gap-2.5 text-brand-100">
+                  <div className="flex items-center gap-2.5 text-brand-800">
                     <Info className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                     <span className="text-xs font-bold uppercase tracking-widest">Overview</span>
                   </div>
-                  <p className="text-white/80 text-base sm:text-xl leading-relaxed font-light">
+                  <p className="text-brand-950/70 text-base sm:text-xl leading-relaxed font-light">
                     {selectedVehicle.description}
                   </p>
                 </div>
 
                 {/* Specs Grid - 4 Card Style - stack on mobile to prevent overlap */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                  <div className="bg-brand-800/40 border border-brand-500/20 p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-3 sm:gap-5 min-w-0">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100 shrink-0">
+                  <div className="bg-brand-100 border border-brand-950/10 p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-3 sm:gap-5 min-w-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-brand-500/10 flex items-center justify-center text-brand-800 shrink-0">
                       <Users className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-[10px] uppercase font-bold text-brand-100/60 tracking-widest mb-0.5">Capacity</p>
-                      <p className="text-base sm:text-lg font-bold text-white break-words">{selectedVehicle.seats}</p>
+                      <p className="text-[10px] uppercase font-bold text-brand-950/50 tracking-widest mb-0.5">Capacity</p>
+                      <p className="text-base sm:text-lg font-bold text-brand-950 break-words">{selectedVehicle.seats}</p>
                     </div>
                   </div>
-                  <div className="bg-brand-800/40 border border-brand-500/20 p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-3 sm:gap-5 min-w-0">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100 shrink-0">
+                  <div className="bg-brand-100 border border-brand-950/10 p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-3 sm:gap-5 min-w-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-brand-500/10 flex items-center justify-center text-brand-800 shrink-0">
                       <Fuel className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-[10px] uppercase font-bold text-brand-100/60 tracking-widest mb-0.5">Fuel Type</p>
-                      <p className="text-base sm:text-lg font-bold text-white break-words">{selectedVehicle.fuelType || 'Gasoline'}</p>
+                      <p className="text-[10px] uppercase font-bold text-brand-950/50 tracking-widest mb-0.5">Fuel Type</p>
+                      <p className="text-base sm:text-lg font-bold text-brand-950 break-words">{selectedVehicle.fuelType || 'Gasoline'}</p>
                     </div>
                   </div>
-                  <div className="bg-brand-800/40 border border-brand-500/20 p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-3 sm:gap-5 min-w-0">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100 shrink-0">
+                  <div className="bg-brand-100 border border-brand-950/10 p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-3 sm:gap-5 min-w-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-brand-500/10 flex items-center justify-center text-brand-800 shrink-0">
                       <Settings2 className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-[10px] uppercase font-bold text-brand-100/60 tracking-widest mb-0.5">Transmission</p>
-                      <p className="text-base sm:text-lg font-bold text-white break-words">{selectedVehicle.trans === 'AT' ? 'Automatic' : 'Manual'}</p>
+                      <p className="text-[10px] uppercase font-bold text-brand-950/50 tracking-widest mb-0.5">Transmission</p>
+                      <p className="text-base sm:text-lg font-bold text-brand-950 break-words">{selectedVehicle.trans === 'AT' ? 'Automatic' : 'Manual'}</p>
                     </div>
                   </div>
-                  <div className="bg-brand-800/40 border border-brand-500/20 p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-3 sm:gap-5 min-w-0">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-100 shrink-0">
+                  <div className="bg-brand-100 border border-brand-950/10 p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex items-center gap-3 sm:gap-5 min-w-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-brand-500/10 flex items-center justify-center text-brand-800 shrink-0">
                       <Shield className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-[10px] uppercase font-bold text-brand-100/60 tracking-widest mb-0.5">Service</p>
-                      <p className="text-sm sm:text-base font-bold leading-tight text-white break-words">{selectedVehicle.serviceType || 'Self-drive or with driver'}</p>
+                      <p className="text-[10px] uppercase font-bold text-brand-950/50 tracking-widest mb-0.5">Service</p>
+                      <p className="text-sm sm:text-base font-bold leading-tight text-brand-950 break-words">{selectedVehicle.serviceType || 'Self-drive or with driver'}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Rental Features */}
                 <div className="space-y-4 sm:space-y-6">
-                  <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-brand-100/70">Rental Features</h4>
+                  <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-brand-950/50">Rental Features</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-y-4 gap-x-4 sm:gap-x-8">
                     {[
                       "Unlimited Mileage",
@@ -854,8 +854,8 @@ const App: React.FC = () => {
                       "Well-maintained Unit",
                       `Carwash Fee: ₱${selectedVehicle.wash}`
                     ].map((feature, i) => (
-                      <div key={i} className="flex items-center gap-3 text-white/90 min-w-0">
-                        <CheckCircle className="w-5 h-5 text-brand-100 shrink-0" />
+                      <div key={i} className="flex items-center gap-3 text-brand-950/80 min-w-0">
+                        <CheckCircle className="w-5 h-5 text-brand-800 shrink-0" />
                         <span className="text-sm font-medium break-words">{feature}</span>
                       </div>
                     ))}
@@ -866,7 +866,7 @@ const App: React.FC = () => {
                 <div className="pt-4 sm:pt-6">
                   <button 
                     onClick={() => handleStartBooking(selectedVehicle)} 
-                    className="w-full bg-brand-100 text-brand-950 py-5 sm:py-6 rounded-full text-lg sm:text-xl font-bold hover:bg-white transition-all shadow-[0_15px_30px_-5px_rgba(127,169,175,0.4)] active:scale-[0.98]"
+                    className="w-full bg-brand-500 text-white py-5 sm:py-6 rounded-full text-lg sm:text-xl font-bold hover:bg-brand-800 transition-all shadow-[0_15px_30px_-10px_rgba(47,125,136,0.35)] active:scale-[0.98]"
                   >
                     Book for ₱{parsePrice(selectedVehicle.price).toLocaleString()}/Day
                   </button>
