@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#1F4B57">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="E.A.R. Car Rental">
@@ -46,11 +46,11 @@
                     },
                     colors: {
                         brand: {
-                            50: '#070708',   // Black background
-                            100: '#111114',  // Surface
-                            500: '#3A7F88',  // Accent (teal)
-                            800: '#1C2C33',  // Deep accent
-                            950: '#F5F7FA',  // Primary text on dark
+                            50: '#AFC1CC',  // Color 3 - Light Blue Gray (Background)
+                            100: '#7FA9AF', // Color 4 - Soft Desaturated Teal
+                            500: '#3A7F88', // Color 2 - Muted Teal
+                            800: '#245C85', // Color 5 - Deep Ocean Blue
+                            950: '#1F4B57', // Color 1 - Deep Teal (Header/Footer/Text)
                         }
                     },
                     animation: {
@@ -62,21 +62,21 @@
     </script>
     <style>
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #070708; }
-        ::-webkit-scrollbar-thumb { background: rgba(245, 247, 250, 0.18); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(245, 247, 250, 0.28); }
+        ::-webkit-scrollbar-track { background: #AFC1CC; }
+        ::-webkit-scrollbar-thumb { background: #3A7F88; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #1F4B57; }
         
         .glass-card {
-            background: rgba(17, 17, 20, 0.65);
+            background: rgba(255, 255, 255, 0.45);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(245, 247, 250, 0.08);
+            border: 1px solid rgba(31, 75, 87, 0.1);
         }
         .glass-nav {
-            background: rgba(0, 0, 0, 0.8); /* Black nav */
+            background: rgba(31, 75, 87, 0.96); /* Deep Teal Background */
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(245, 247, 250, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         .text-glow { text-shadow: 0 0 30px rgba(58, 127, 136, 0.3); }
         .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -91,8 +91,9 @@
             transform: translateY(-1.5px);
         }
         
-        input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); }
-        input[type="time"]::-webkit-calendar-picker-indicator { filter: invert(1); }
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(0.2) sepia(1) saturate(1) hue-rotate(160deg);
+        }
     </style>
 <script type="importmap">
 {
@@ -108,7 +109,7 @@
 <link rel="apple-touch-icon" href="/logo-512.jpg" sizes="180x180">
 <link rel="stylesheet" href="/index.css">
 </head>
-<body class="bg-brand-50 text-brand-950 antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-brand-50 text-brand-950 antialiased selection:bg-brand-950 selection:text-white">
     <div id="root"></div>
 <script type="module" src="/index.tsx"></script>
 </body>
