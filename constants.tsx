@@ -39,12 +39,6 @@ export const FLEET_DATA: Vehicle[] = [
     fuelType: 'Diesel', serviceType: 'Self-drive or with driver'
   },
   { 
-    id: 7, year: '2025', brand: 'Toyota', model: 'Hilux 4x2', trans: 'AT', seats: '5 Seaters', color: 'Silver Metallic', price: '3,000', wash: '300', 
-    imageUrl: 'https://github.com/bxxmzilla1/earcarrental/blob/main/2025%20Toyota%20Hilux%204x2.png?raw=true',
-    description: 'Rugged yet refined, the Hilux 4x2 is ready to handle whatever the road throws at you with style and confidence.',
-    fuelType: 'Diesel', serviceType: 'Self-drive or with driver'
-  },
-  { 
     id: 8, year: '2025', brand: 'Toyota', model: 'Hilux 4x4', trans: 'AT', seats: '5 Seaters', color: 'White', price: '3,500', wash: '300', 
     imageUrl: 'https://github.com/bxxmzilla1/earcarrental/blob/main/2025%20Toyota%20Hilux%204x4.png?raw=true',
     description: 'The ultimate 4x4 companion for El Nido adventures. This Hilux variant is equipped to conquer the most challenging terrains.',
@@ -57,27 +51,9 @@ export const FLEET_DATA: Vehicle[] = [
     fuelType: 'Diesel', serviceType: 'Self-drive or with driver'
   },
   { 
-    id: 10, year: '2024', brand: 'Mitsubishi', model: 'Montero 4x2', trans: 'AT', seats: '7 Seaters', color: 'Silver', price: '3,500', wash: '300', 
-    imageUrl: 'https://github.com/bxxmzilla1/earcarrental/blob/main/2024%20Mitsubishi%20Montero%204x2.png?raw=true',
-    description: 'Elegant and powerful, the Montero Sport offers a premium SUV experience with superior comfort for up to seven passengers.',
-    fuelType: 'Diesel', serviceType: 'Self-drive or with driver'
-  },
-  { 
     id: 11, year: '2025', brand: 'Toyota', model: 'Fortuner 4x2', trans: 'AT', seats: '7 Seaters', color: 'White', price: '3,500', wash: '300', 
     imageUrl: 'https://github.com/bxxmzilla1/earcarrental/blob/main/2025%20Toyota%20Fortuner%204x2.png?raw=true',
     description: 'Dominate the road with the Toyota Fortuner. A perfect blend of luxury and ruggedness for long-distance cruising.',
-    fuelType: 'Diesel', serviceType: 'Self-drive or with driver'
-  },
-  { 
-    id: 12, year: '2026', brand: 'Ford', model: 'Everest 4x2', trans: 'AT', seats: '7 Seaters', color: 'White', price: '3,500', wash: '300', 
-    imageUrl: 'https://github.com/bxxmzilla1/earcarrental/blob/main/2026%20Ford%20Everest%204x2.png?raw=true',
-    description: 'Experience the next generation of SUVs. The 2026 Ford Everest offers sophisticated design and robust performance.',
-    fuelType: 'Diesel', serviceType: 'Self-drive or with driver'
-  },
-  { 
-    id: 13, year: '2025', brand: 'Ford', model: 'Everest 4x4', trans: 'AT', seats: '7 Seaters', color: 'White', price: '4,000', wash: '300', 
-    imageUrl: 'https://github.com/bxxmzilla1/earcarrental/blob/main/2026%20Ford%20Everest%204x4.png?raw=true',
-    description: 'For those who go further. The Everest 4x4 is packed with capability and luxurious amenities for your most ambitious travels.',
     fuelType: 'Diesel', serviceType: 'Self-drive or with driver'
   },
   { 
